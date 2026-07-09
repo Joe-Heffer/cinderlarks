@@ -29,6 +29,7 @@
   --font-heading: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Lora', 'Iowan Old Style', Georgia, serif;
   --font-hand: 'Caveat', cursive;
+  --font-icon: 'Material Symbols Outlined';
 
   /* spacing */
   --space-1: 0.25rem;
@@ -90,6 +91,24 @@ a:focus-visible,
   font-size: 1.2rem;
 }
 
+/* icons — Google "Material Symbols", tuned thin and unfilled to sit
+   quietly alongside the hand-drawn line motifs rather than compete
+   with them. */
+
+.gicon {
+  font-family: var(--font-icon);
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' -25, 'opsz' 20;
+  font-size: 1.05em;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: -0.2em;
+  margin-right: 0.3em;
+  color: var(--color-sage-deep);
+  opacity: 0.8;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
 /* nav */
 
 .quiet-nav {
@@ -117,6 +136,12 @@ a:focus-visible,
   opacity: 1;
 }
 
+.quiet-nav .gicon {
+  color: currentColor;
+  opacity: 1;
+  font-size: 0.95em;
+}
+
 /* page shell */
 
 main.page {
@@ -135,6 +160,19 @@ main.page {
   margin-top: var(--space-4);
   font-family: var(--font-heading);
   font-style: italic;
+}
+
+.entry-link .gicon {
+  color: currentColor;
+  opacity: 1;
+  margin-right: 0;
+  margin-left: 0.3em;
+  transition: transform 0.2s ease;
+}
+
+.entry-link:hover .gicon,
+.entry-link:focus-visible .gicon {
+  transform: translateX(4px);
 }
 
 /* footer */
