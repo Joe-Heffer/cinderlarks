@@ -16,35 +16,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          cream: '#F7F1E8',
-          'cream-alt': '#EFE4D4',
-          ink: '#4A3B4D',
-          'ink-alt': '#2E3440',
-          pink: '#D9A9A0',
-          'pink-deep': '#B36B63',
-          'pink-tint': '#F0DEDA',
-          sage: '#A8B79C',
-          'sage-deep': '#5B6F4E',
-          'sage-tint': '#E4E9DF',
-          gold: '#C9A66B',
-          'gold-deep': '#8F6C3A',
-          'gold-tint': '#F0E4CC',
-        },
-        fontFamily: {
-          display: ['"Playfair Display"', '"Iowan Old Style"', 'Georgia', 'serif'],
-          serif: ['Lora', '"Iowan Old Style"', 'Georgia', 'serif'],
-          hand: ['Caveat', 'cursive'],
-        },
-      },
-    },
-  };
-</script>
+<script src="../../shared/tailwind/tailwind.js"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-cream: #F7F1E8;
+    --color-cream-alt: #EFE4D4;
+    --color-ink: #4A3B4D;
+    --color-ink-alt: #2E3440;
+    --color-pink: #D9A9A0;
+    --color-pink-deep: #B36B63;
+    --color-pink-tint: #F0DEDA;
+    --color-sage: #A8B79C;
+    --color-sage-deep: #5B6F4E;
+    --color-sage-tint: #E4E9DF;
+    --color-gold: #C9A66B;
+    --color-gold-deep: #8F6C3A;
+    --color-gold-tint: #F0E4CC;
+
+    --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+    --font-serif: Lora, "Iowan Old Style", Georgia, serif;
+    --font-hand: Caveat, cursive;
+  }
+</style>
 
 <style>
   html { scroll-behavior: smooth; }
