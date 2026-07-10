@@ -207,11 +207,18 @@ main.page {
   margin: var(--space-5) 0;
 }
 
-.photo-placeholder-block {
+.photo-placeholder-block,
+.song-photo {
   aspect-ratio: 4 / 3;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.photo-placeholder-block {
   background: linear-gradient(160deg, var(--color-pink-tint), var(--color-sage) 140%);
   filter: sepia(0.25) saturate(0.7) contrast(0.95);
-  border-radius: var(--radius);
 }
 
 .photo-placeholder figcaption {
