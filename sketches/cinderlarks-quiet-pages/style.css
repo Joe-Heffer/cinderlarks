@@ -150,31 +150,6 @@ main.page {
   padding: var(--space-6) var(--space-3) var(--space-5);
 }
 
-.tagline {
-  font-style: italic;
-  color: var(--color-ink);
-}
-
-.entry-link {
-  display: inline-block;
-  margin-top: var(--space-4);
-  font-family: var(--font-heading);
-  font-style: italic;
-}
-
-.entry-link .gicon {
-  color: currentColor;
-  opacity: 1;
-  margin-right: 0;
-  margin-left: 0.3em;
-  transition: transform 0.2s ease;
-}
-
-.entry-link:hover .gicon,
-.entry-link:focus-visible .gicon {
-  transform: translateX(4px);
-}
-
 /* footer */
 
 .quiet-footer {
@@ -215,73 +190,6 @@ main.page {
   opacity: 0.4;
   display: block;
   margin: var(--space-5) auto;
-}
-
-/* songs index */
-
-.song-index {
-  list-style: none;
-  margin: var(--space-5) 0 0;
-  padding: 0;
-}
-
-.song-index li {
-  border-bottom: 1px solid var(--color-sage-tint);
-}
-
-.song-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-5) var(--space-3) 0;
-  text-decoration: none;
-  color: var(--color-ink);
-}
-
-.song-row-num {
-  width: 2.25rem;
-  flex-shrink: 0;
-}
-
-.song-row-title {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  transition: color 0.2s ease;
-}
-
-.song-row-icon {
-  position: absolute;
-  right: var(--space-2);
-  top: 50%;
-  transform: translate(-6px, -50%) scale(0.9);
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.song-row:hover .song-row-icon,
-.song-row:focus-visible .song-row-icon {
-  opacity: 0.8;
-  transform: translate(0, -50%) scale(1);
-}
-
-.song-row:hover .song-row-title,
-.song-row:focus-visible .song-row-title {
-  color: var(--color-pink-deep);
-}
-
-.song-index-inert {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-5) var(--space-3) 0;
-  color: var(--color-ink);
-  opacity: 0.4;
-}
-
-.song-index-inert .song-row-title {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
 }
 
 /* song page */
@@ -331,24 +239,6 @@ main.page {
   margin: var(--space-2) 0 0;
 }
 
-/* shows */
-
-.show-list {
-  list-style: none;
-  margin: var(--space-5) 0 0;
-  padding: 0;
-}
-
-.show-list li {
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--color-sage-tint);
-}
-
-.show-date {
-  font-family: var(--font-heading);
-  font-weight: 600;
-}
-
 /* responsive */
 
 @media (max-width: 480px) {
@@ -360,8 +250,4 @@ main.page {
   }
 
   h1 { font-size: 1.75rem; }
-
-  .song-row-icon {
-    display: none; /* avoid clipping on very narrow viewports; reveal is decorative only */
-  }
 }
