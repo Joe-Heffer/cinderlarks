@@ -230,10 +230,6 @@ section { padding: 5rem 1.5rem; }
 }
 .split-panel-photo--square { aspect-ratio: 1 / 1; }
 
-.ph-mill {
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(170deg, #3A362E, #14120F 140%);
-}
 .gallery-photo {
   display: block;
   width: 100%;
