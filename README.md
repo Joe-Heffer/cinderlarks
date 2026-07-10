@@ -7,6 +7,7 @@ Website concept sketches — plain static HTML/CSS/JS prototypes, deployed to Gi
 - `index.html` — landing page linking to every sketch.
 - `sketches/` — one folder per concept sketch. Each is a self-contained static site.
 - `sketches/template/` — starting point to copy for a new sketch, not a real design.
+- `shared/` — optional vendored static resources (Tailwind CSS, Material Icons) that any sketch can link to instead of using a CDN. See `shared/README.md`.
 
 ## Adding a new sketch
 

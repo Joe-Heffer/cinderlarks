@@ -21,6 +21,7 @@ Then open http://localhost:8000. That's it — there's no build, lint, or test c
 - `index.html` — landing page linking to every sketch.
 - `sketches/` — one folder per concept sketch, each a self-contained static site (its own HTML pages + `style.css`). Sketches do not share code or styles with each other.
 - `sketches/template/` — starting point to copy for a new sketch; not a real design.
+- `shared/` — vendored static resources (Tailwind CSS browser build, Material Icons) sketches may optionally link to instead of pulling from a CDN. See `shared/README.md` for usage and versions. Using it is opt-in — sketches remain self-contained if they don't.
 
 To add a new sketch: `cp -r sketches/template sketches/my-idea`, then edit it and add a link from the root `index.html`.
 
