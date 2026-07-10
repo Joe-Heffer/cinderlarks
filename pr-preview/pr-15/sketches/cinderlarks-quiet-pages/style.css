@@ -1,0 +1,253 @@
+/*
+  The Cinderlarks — "Quiet Pages" concept sketch.
+  NOTE: this repo has no templating, so nav/footer markup and the five
+  motif SVGs are duplicated on every page by design. If a motif or nav
+  link changes, edit each page individually.
+*/
+
+:root {
+  /* colour: base (text-safe, 9-11:1 contrast on cream) */
+  --color-bg: #F7F1E8;
+  --color-ink: #4A3B4D;
+  --color-ink-alt: #2E3440;
+
+  /* colour: dusty pink — raw is decorative-only (1.8:1, fails as text) */
+  --color-pink: #D9A9A0;
+  --color-pink-deep: #B36B63; /* text-safe, large headings only */
+  --color-pink-tint: #F0DEDA;
+
+  /* colour: sage — raw is decorative-only (1.9:1, fails as text) */
+  --color-sage: #A8B79C;
+  --color-sage-deep: #5B6F4E; /* text-safe, links/nav */
+  --color-sage-tint: #E4E9DF;
+
+  /* colour: faded gold — decorative only, never used as text colour */
+  --color-gold: #C9A66B;
+  --color-gold-tint: #F0E4CC;
+
+  /* type */
+  --font-heading: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Lora', 'Iowan Old Style', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+  --font-icon: 'Material Symbols Outlined';
+
+  /* spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  --content-width: 38rem;
+  --radius: 2px;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--color-bg); }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+h1, h2, h3, .song-title {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.5rem; color: var(--color-pink-deep); }
+
+p { margin: 0 0 var(--space-4); }
+
+a {
+  color: var(--color-sage-deep);
+  text-decoration-color: var(--color-sage);
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+.song-row:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 4px;
+}
+
+.hand-note,
+.page-number,
+.marginalia {
+  font-family: var(--font-hand);
+  color: var(--color-ink);
+  opacity: 0.85;
+  font-size: 1.2rem;
+}
+
+/* icons — Google "Material Symbols", tuned thin and unfilled to sit
+   quietly alongside the hand-drawn line motifs rather than compete
+   with them. */
+
+.gicon {
+  font-family: var(--font-icon);
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' -25, 'opsz' 20;
+  font-size: 1.05em;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: -0.2em;
+  margin-right: 0.3em;
+  color: var(--color-sage-deep);
+  opacity: 0.8;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* nav */
+
+.quiet-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--color-sage-tint);
+}
+
+.quiet-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  opacity: 0.75;
+}
+
+.quiet-nav a:hover,
+.quiet-nav a[aria-current="page"] {
+  color: var(--color-sage-deep);
+  opacity: 1;
+}
+
+.quiet-nav .gicon {
+  color: currentColor;
+  opacity: 1;
+  font-size: 0.95em;
+}
+
+/* page shell */
+
+main.page {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3) var(--space-5);
+}
+
+/* footer */
+
+.quiet-footer {
+  max-width: var(--content-width);
+  margin: var(--space-6) auto 0;
+  padding: var(--space-4) var(--space-3) var(--space-6);
+  text-align: center;
+  border-top: 1px solid var(--color-sage-tint);
+}
+
+.stamp-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+  color: var(--color-ink);
+  opacity: 0.45;
+}
+
+.motif {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.motif.motif-large {
+  width: 72px;
+  height: 72px;
+  stroke-width: 1.25;
+}
+
+.motif.motif-divider {
+  width: 28px;
+  height: 28px;
+  opacity: 0.4;
+  display: block;
+  margin: var(--space-5) auto;
+}
+
+/* song page */
+
+.song-hero {
+  text-align: center;
+  margin: 0 0 var(--space-5);
+}
+
+.song-hero figcaption {
+  margin-top: var(--space-2);
+}
+
+.photo-placeholder {
+  margin: var(--space-5) 0;
+}
+
+.photo-placeholder-block {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(160deg, var(--color-pink-tint), var(--color-sage) 140%);
+  filter: sepia(0.25) saturate(0.7) contrast(0.95);
+  border-radius: var(--radius);
+}
+
+.photo-placeholder figcaption {
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-ink-alt);
+  opacity: 0.7;
+  text-align: center;
+}
+
+.audio-placeholder {
+  margin: var(--space-4) 0;
+  text-align: center;
+}
+
+.audio-placeholder audio {
+  width: 100%;
+  max-width: 22rem;
+  opacity: 0.45;
+  filter: grayscale(0.4);
+  pointer-events: none;
+}
+
+.audio-placeholder p {
+  margin: var(--space-2) 0 0;
+}
+
+/* responsive */
+
+@media (max-width: 480px) {
+  main.page,
+  .quiet-nav,
+  .quiet-footer {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  h1 { font-size: 1.75rem; }
+}
