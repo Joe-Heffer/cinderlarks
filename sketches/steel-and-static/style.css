@@ -187,33 +187,6 @@ h1, h2 {
 }
 .stamp-link + .stamp-link { transform: rotate(1deg); }
 
-/* AI prompt cards */
-.ai-prompt {
-  font-family: var(--font-stamp);
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: var(--color-ink);
-  background: var(--color-bg-paper);
-  border: 1px solid var(--color-hairline-paper);
-  border-radius: 2px;
-  padding: 1rem 1.15rem;
-  max-width: 34rem;
-  margin: 1rem auto 0;
-  text-align: left;
-  transform: rotate(-0.6deg);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
-}
-.ai-prompt-label {
-  display: block;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.72rem;
-  color: var(--color-rust);
-  margin-bottom: 0.4rem;
-}
-.hero .ai-prompt { margin-top: 3rem; }
-
 /* generic section rhythm */
 main.page { max-width: var(--content-width); margin: 0 auto; }
 section { padding: 5rem 1.5rem; }
@@ -255,36 +228,31 @@ section { padding: 5rem 1.5rem; }
   border-radius: 2px;
   filter: saturate(0.85) contrast(1.05);
 }
-.ph-tape {
-  aspect-ratio: 1 / 1;
-  background: radial-gradient(70% 70% at 50% 50%, #6B4A2A, #2A2018 80%);
-}
-.ph-poster {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(155deg, #C9BE9F, #8B4A26 130%);
-}
+.split-panel-photo--square { aspect-ratio: 1 / 1; }
+
 .ph-mill {
   aspect-ratio: 16 / 9;
   background: linear-gradient(170deg, #3A362E, #14120F 140%);
 }
-.ph-instrument {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(200deg, #A9853F, #2A2018 140%);
+.gallery-photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: saturate(0.85) contrast(1.05);
 }
-.ph-hand {
-  aspect-ratio: 4 / 3;
-  background: radial-gradient(90% 90% at 40% 60%, #8B4A26, #2A1B10 85%);
-}
+.ph-instrument { aspect-ratio: 4 / 5; }
 
 /* contact-sheet gallery */
 .contact-sheet {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 .contact-sheet .photo-placeholder:nth-child(1) { transform: rotate(-1.5deg); }
 .contact-sheet .photo-placeholder:nth-child(2) { transform: rotate(1deg); }
-.contact-sheet .photo-placeholder:nth-child(3) { transform: rotate(-0.5deg); }
 .contact-sheet .photo-placeholder {
   background: var(--color-bg-panel);
   padding: 0.75rem 0.75rem 1rem;
@@ -292,20 +260,41 @@ section { padding: 5rem 1.5rem; }
 }
 .contact-sheet .photo-placeholder figcaption { color: var(--color-text-dim); }
 
-/* full-bleed banner */
-.banner-photo {
+/* poster wall — two gig posters, full width */
+.poster-wall {
   margin: 0;
   width: 100%;
+  padding: 4rem 1.5rem;
+  background: var(--color-bg-panel);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
 }
-.banner-photo .photo-placeholder-block {
-  aspect-ratio: 21 / 9;
-  border-radius: 0;
-  background: radial-gradient(80% 120% at 30% 50%, #8B4A26, #16140F 90%);
+.poster-wall-item {
+  margin: 0;
+  width: 15rem;
+  max-width: 42vw;
 }
-.banner-photo figcaption {
-  max-width: var(--content-width);
-  margin: 0.75rem auto 0;
-  padding: 0 1.5rem;
+.poster-wall-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: saturate(0.85) contrast(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+.poster-wall-item--one { transform: rotate(-2deg); }
+.poster-wall-item--two { transform: rotate(1.5deg); margin-top: 1.5rem; }
+.poster-wall-caption {
+  flex-basis: 100%;
+  text-align: center;
+  font-family: var(--font-stamp);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin: 1.5rem 0 0;
 }
 
 /* tape-line divider */
@@ -316,9 +305,20 @@ section { padding: 5rem 1.5rem; }
 
 /* discography */
 .discography {
-  background-image: radial-gradient(circle at 3px 3px, rgba(217, 135, 63, 0.5) 1.1px, transparent 1.6px);
-  background-size: 6px 6px;
+  position: relative;
+  isolation: isolate;
   background-color: var(--color-bg-panel);
+}
+.discography::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("images/halftone-texture.jpg");
+  background-size: 260px 260px;
+  background-repeat: repeat;
+  opacity: 0.14;
+  mix-blend-mode: screen;
 }
 .track-list {
   list-style: none;
@@ -426,4 +426,5 @@ footer.quiet-footer p {
   .hero-wordmark { font-size: 2.4rem; }
   .motif-large { width: 140px; height: 140px; }
   .track-plate { flex-wrap: wrap; padding: 1rem; }
+  .poster-wall-item { width: 11rem; max-width: 60vw; }
 }
