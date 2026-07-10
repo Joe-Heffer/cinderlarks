@@ -239,6 +239,27 @@ section { padding: 5rem 1.5rem; }
 }
 .ph-instrument { aspect-ratio: 4 / 5; }
 
+/* location photo — single wide banner shot */
+.location-photo {
+  margin: 0 auto;
+  max-width: var(--content-width);
+  padding: 0 1.5rem;
+}
+.location-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: saturate(0.85) contrast(1.05);
+}
+.location-photo figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  text-align: left;
+}
+
 /* contact-sheet gallery */
 .contact-sheet {
   display: grid;
@@ -413,7 +434,11 @@ footer.quiet-footer p {
   .split-panel { grid-template-columns: 1fr; }
   .split-panel--reverse .split-panel-media,
   .split-panel--reverse .split-panel-text { order: initial; }
-  .contact-sheet { grid-template-columns: 1fr; }
+  .split-panel-media { max-width: 28rem; margin: 0 auto; }
+}
+
+@media (max-width: 560px) {
+  .contact-sheet { grid-template-columns: 1fr; max-width: 20rem; }
 }
 
 @media (max-width: 480px) {
