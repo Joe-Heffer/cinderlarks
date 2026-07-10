@@ -1,0 +1,211 @@
+/* The Cinderlarks — "The Kid Who Drowned" concept sketch.
+   A single, self-contained dark page: the moment just before going
+   under. Same typographic instincts as the site's other sketches
+   (literary serif + a single handwritten accent), but its own palette,
+   layout and CSS — nothing shared or imported from other sketches. */
+
+:root {
+  --color-bg: #2E3440;        /* deep muted ink-navy */
+  --color-text: #F7F1E8;      /* warm cream body text */
+  --color-text-dim: #D4C9B1;  /* muted parchment, captions/asides */
+  --color-pink: #B98D8A;      /* faded slate-pink accent */
+  --color-sage: #6E7C63;      /* deep sage accent */
+  --color-hairline: #414F46;  /* barely-there divider line */
+  --color-gold: #C9A66B;      /* faded gold — used once, sparingly */
+
+  --font-heading: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Lora', 'Iowan Old Style', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+
+  --content-width: 38rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a { color: var(--color-sage); }
+a:hover, a:focus-visible { color: var(--color-pink); }
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 1.5rem;
+}
+
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: var(--color-text-dim);
+}
+
+.wayfinding {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wayfinding a {
+  text-decoration: none;
+  opacity: 0.8;
+}
+.wayfinding a:hover, .wayfinding a:focus-visible { opacity: 1; }
+
+.wordmark {
+  opacity: 0.6;
+}
+
+main.page {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1rem 1rem 5rem;
+}
+
+.page-marker {
+  margin: 0 0 2rem;
+}
+
+/* motif */
+.motif {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+.motif-large { width: 80px; height: 80px; stroke-width: 1.1; color: var(--color-pink); }
+.motif-divider {
+  width: 32px;
+  height: 32px;
+  opacity: 0.45;
+  display: block;
+  margin: 3rem auto;
+  color: var(--color-sage);
+}
+
+.song-hero {
+  text-align: center;
+  margin: 0 0 3rem;
+}
+.song-hero figcaption { margin-top: 0.75rem; }
+
+/* reflective prose */
+.reflection {
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+/* lyric swell — one restrained typographic flourish, used once */
+.lyric-swell {
+  margin: 3.5rem 0;
+  text-align: center;
+}
+.lyric-swell-line {
+  font-family: var(--font-heading);
+  font-style: italic;
+  margin: 0 0 0.6rem;
+  color: var(--color-text);
+}
+.lyric-swell-line:nth-child(1) { font-size: 1rem;    letter-spacing: 0.02em; opacity: 0.55; }
+.lyric-swell-line:nth-child(2) { font-size: 1.4rem;  letter-spacing: 0.06em; opacity: 0.72; }
+.lyric-swell-line:nth-child(3) { font-size: 1.9rem;  letter-spacing: 0.09em; opacity: 0.9; font-weight: 500; }
+.lyric-swell-line:nth-child(4) {
+  font-size: 2.5rem;
+  letter-spacing: 0.14em;
+  opacity: 1;
+  font-weight: 500;
+  color: var(--color-pink);
+}
+
+/* image placeholders — moody, underexposed, not the site's bright default */
+.photo-placeholder { margin: 3rem 0; }
+.photo-placeholder-block {
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  background: linear-gradient(160deg, #1E242D, var(--color-hairline) 130%);
+  filter: brightness(0.85) saturate(0.6) contrast(1.05);
+}
+.photo-placeholder figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* closing lyric + the one warm, handwritten, gold accent */
+.song-closing {
+  text-align: center;
+  margin: 3.5rem 0 2.5rem;
+}
+.song-closing-line {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.song-gold-aside {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-gold);
+  opacity: 1;
+}
+
+/* audio placeholder */
+.audio-placeholder { margin: 2.5rem 0; text-align: center; }
+.audio-placeholder audio {
+  width: 100%;
+  max-width: 22rem;
+  opacity: 0.5;
+  filter: grayscale(0.4);
+  pointer-events: none;
+}
+.audio-placeholder p { margin: 0.75rem 0 0; }
+
+footer.quiet-footer {
+  max-width: var(--content-width);
+  margin: 3rem auto 0;
+  padding: 1.5rem 1rem 3rem;
+  text-align: center;
+  border-top: 1px solid var(--color-hairline);
+}
+footer.quiet-footer p { margin: 0; opacity: 0.7; }
+
+/* fade-in — text and image surfacing gradually, this page only */
+@keyframes surface-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.surface-in { animation: surface-in 1.4s ease-out both; }
+.surface-in-delay-1 { animation-delay: 0.2s; }
+.surface-in-delay-2 { animation-delay: 0.45s; }
+.surface-in-delay-3 { animation-delay: 0.7s; }
+.surface-in-delay-4 { animation-delay: 0.95s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .surface-in { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .wayfinding, main.page, footer.quiet-footer { padding-left: 1rem; padding-right: 1rem; }
+  h1 { font-size: 2rem; }
+  .lyric-swell-line:nth-child(3) { font-size: 1.5rem; }
+  .lyric-swell-line:nth-child(4) { font-size: 1.9rem; }
+}
