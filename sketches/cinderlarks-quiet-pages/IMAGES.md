@@ -1,10 +1,13 @@
 # Quiet Pages — image prompts
 
-`index.html` currently renders without any raster images (hero motifs and
-song-card art are all inline SVG + CSS gradients, so the sketch stays
-dependency-free). These are prompts for the real photography/textures that
-would replace those placeholders before this leaves sketch stage. Written for
-Midjourney / DALL·E / Stable Diffusion — adjust aspect ratio flags per tool.
+`images/` now holds AI-generated photography matching the prompts below:
+hero (`hero-open-book.jpg`), background texture (`paper-grain.jpg`), one
+photo per released song (`song-*.jpg`), a band shot (`band-rehearsal.jpg`)
+used in About, and a bonus botanical illustration (`botanical-rosehip.jpg`)
+used as a small margin flourish. Treat these as sketch-stage placeholders,
+not final assets — swap for real photography before this leaves sketch
+stage. Prompts below are written for Midjourney / DALL·E / Stable Diffusion
+— adjust aspect ratio flags per tool.
 
 Shared style notes for every prompt below: warm cream and dusty-pink light,
 desaturated, slightly faded like an old print; documentary/still-life

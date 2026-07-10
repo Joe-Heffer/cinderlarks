@@ -50,9 +50,11 @@
   html { scroll-behavior: smooth; }
 
   body {
-    /* subtle paper grain, generated inline so the sketch stays dependency-free */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.29  0 0 0 0 0.23  0 0 0 0 0.30  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image: url('images/paper-grain.jpg');
     background-repeat: repeat;
+    background-size: 700px auto;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
   }
 
   .reveal {
@@ -105,7 +107,8 @@
 
   <!-- a scatter of the site's five hand-drawn motifs, like objects left between pages -->
   <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute inset-0 bg-gradient-to-b from-pink-tint/50 via-cream to-sage-tint/40"></div>
+    <img src="images/hero-open-book.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 sm:opacity-35">
+    <div class="absolute inset-0 bg-gradient-to-b from-pink-tint/60 via-cream/80 to-sage-tint/60"></div>
 
     <svg class="hidden sm:block absolute top-[14%] left-[8%] w-16 h-16 sm:w-24 sm:h-24 text-pink-deep/25 animate-drift" style="--rot:-8deg; animation-delay:0s" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
       <circle cx="16" cy="18" r="9"/><circle cx="16" cy="9" r="2.5" fill="currentColor" stroke="none"/>
@@ -155,12 +158,22 @@
   <p class="reveal font-hand text-xl text-gold-deep text-center mb-3" style="transition-delay:.05s">chapter one</p>
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink text-center mb-10" style="transition-delay:.1s">About</h2>
 
+  <div class="reveal float-right ml-6 mb-4 w-28 sm:w-36" style="transition-delay:.12s" aria-hidden="true">
+    <img src="images/botanical-rosehip.jpg" alt="" class="w-full rounded-sm opacity-90" style="mix-blend-mode:multiply">
+    <p class="font-hand text-sm text-sage-deep/70 text-center mt-1">pressed, kept</p>
+  </div>
+
   <div class="reveal space-y-6 text-ink/85 leading-relaxed" style="transition-delay:.15s">
     <p>They started, as far as anyone can agree, in a kitchen in Crookes with a kettle that took twenty minutes and a guitar someone&rsquo;s dad didn&rsquo;t want anymore. Four of them, most weeks, though the lineup has a way of resettling itself like snow.</p>
     <p>The songs came out soft before anyone decided they should &mdash; country changes, folk patience, something of the Beatles&rsquo; tunefulness and the Smiths&rsquo; way of making a small hurt sound like company. Nobody in the band would call it dad-rock to your face. Someone&rsquo;s dad already did.</p>
     <p>What they&rsquo;re actually interested in: jugs, envelopes, rings left on windowsills, the fossil in the coat pocket you forget about until November. Small objects that have outlived a feeling. Sheffield weather, mostly. Tea, occasionally. Time, reluctantly, and only in the last song of any given set.</p>
     <p>They rehearse in a room above a shop that used to sell prams. They are, by their own admission, not in a hurry.</p>
   </div>
+
+  <figure class="reveal mt-10" style="transition-delay:.18s">
+    <img src="images/band-rehearsal.jpg" alt="The Cinderlarks rehearsing in a modest room above an old shop, natural window light, instruments out, mid-conversation" class="w-full rounded-sm">
+    <figcaption class="font-hand text-lg text-ink/50 text-center mt-3">above the old pram shop</figcaption>
+  </figure>
 
   <p class="reveal font-hand text-xl text-sage-deep text-center mt-10" style="transition-delay:.2s">Sheffield, ongoing.</p>
 </section>
@@ -175,10 +188,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
 
       <a href="song-gold.html" class="reveal group block bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-gold-deep transition-colors" style="transition-delay:.05s">
-        <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-gold-tint to-pink-tint">
-          <svg class="w-14 h-14 text-gold-deep/70 group-hover:scale-110 transition-transform" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <circle cx="16" cy="18" r="9"/><circle cx="16" cy="9" r="2.5" fill="currentColor" stroke="none"/>
-          </svg>
+        <div class="aspect-square overflow-hidden">
+          <img src="images/song-gold.jpg" alt="A tarnished gold ring in a ceramic dish by a kitchen sink" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
         </div>
         <div class="p-5">
           <p class="font-hand text-sm text-ink/50">01</p>
@@ -188,10 +199,8 @@
       </a>
 
       <a href="song-cups-and-rings.html" class="reveal group block bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage-deep transition-colors" style="transition-delay:.1s">
-        <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-sage-tint to-cream-alt">
-          <svg class="w-14 h-14 text-sage-deep/70 group-hover:scale-110 transition-transform" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <path d="M9 7 L20 7 L19 10 C22 11 23 13 23 16 L23 21 C23 25 19 28 15 28 C11 28 8 25 8 21 L8 12 Z"/><path d="M22 14 C26 14 26 20 22 20"/>
-          </svg>
+        <div class="aspect-square overflow-hidden">
+          <img src="images/song-cups-and-rings.jpg" alt="A chipped ceramic jug and cup on a windowsill with faint water-ring stains" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
         </div>
         <div class="p-5">
           <p class="font-hand text-sm text-ink/50">02</p>
@@ -201,10 +210,8 @@
       </a>
 
       <a href="song-she-wrote-me-a-letter.html" class="reveal group block bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-pink-deep transition-colors" style="transition-delay:.15s">
-        <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-pink-tint to-cream">
-          <svg class="w-14 h-14 text-pink-deep/70 group-hover:scale-110 transition-transform" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <rect x="4" y="8" width="24" height="18" rx="1"/><polyline points="4,8 16,20 28,8"/>
-          </svg>
+        <div class="aspect-square overflow-hidden">
+          <img src="images/song-letter.jpg" alt="A ribbon-tied bundle of envelopes beside a fountain pen" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
         </div>
         <div class="p-5">
           <p class="font-hand text-sm text-ink/50">03</p>
@@ -214,10 +221,8 @@
       </a>
 
       <a href="song-pocket-full-of-fossils.html" class="reveal group block bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-ink/60 transition-colors" style="transition-delay:.2s">
-        <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-cream-alt to-sage-tint">
-          <svg class="w-14 h-14 text-ink/60 group-hover:scale-110 transition-transform" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <path d="M16 16 m-2,0 a2,2 0 1,1 4,0 a4,4 0 1,1 -8,0 a6,6 0 1,1 12,0 a8,8 0 1,1 -16,0"/>
-          </svg>
+        <div class="aspect-square overflow-hidden">
+          <img src="images/song-fossils.jpg" alt="Small ammonite fossils, a bus ticket and loose change in a worn coat pocket" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
         </div>
         <div class="p-5">
           <p class="font-hand text-sm text-ink/50">04</p>
@@ -227,10 +232,8 @@
       </a>
 
       <a href="song-where-did-all-the-time-go.html" class="reveal group block bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-gold-deep transition-colors sm:col-span-2 lg:col-span-1" style="transition-delay:.25s">
-        <div class="aspect-square flex items-center justify-center bg-gradient-to-br from-gold-tint to-cream-alt">
-          <svg class="w-14 h-14 text-gold-deep/70 group-hover:scale-110 transition-transform" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-            <circle cx="16" cy="16" r="10"/><line x1="16" y1="16" x2="16" y2="9"/><line x1="16" y1="16" x2="21" y2="13"/>
-          </svg>
+        <div class="aspect-square overflow-hidden">
+          <img src="images/song-clock.jpg" alt="A small antique mantel clock on a dusty windowsill, soft light through net curtains" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
         </div>
         <div class="p-5">
           <p class="font-hand text-sm text-ink/50">05</p>
