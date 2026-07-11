@@ -25,7 +25,10 @@
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background:
+    linear-gradient(rgba(46, 52, 64, 0.94), rgba(46, 52, 64, 0.94)),
+    url("images/water-texture.png") center / cover no-repeat fixed;
+  background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 1.05rem;
@@ -145,7 +148,7 @@ main.page {
   color: var(--color-pink);
 }
 
-/* image placeholders — moody, underexposed, not the site's bright default */
+/* photos — moody, underexposed, not the site's bright default */
 .photo-placeholder { margin: 3rem 0; }
 .photo-placeholder-block {
   aspect-ratio: 4 / 3;
@@ -153,12 +156,35 @@ main.page {
   background: linear-gradient(160deg, #1E242D, var(--color-hairline) 130%);
   filter: brightness(0.85) saturate(0.6) contrast(1.05);
 }
+.photo-placeholder .song-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: brightness(0.9) saturate(0.75) contrast(1.03);
+}
 .photo-placeholder figcaption {
   margin-top: 0.75rem;
   font-size: 0.85rem;
   color: var(--color-text-dim);
   opacity: 0.75;
   text-align: center;
+}
+
+/* illustrated artwork — the fine ink line + watercolor motifs, smaller and centered */
+.artwork-illustration {
+  margin: 3rem auto;
+  max-width: 16rem;
+  text-align: center;
+}
+.artwork-illustration .song-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.artwork-illustration figcaption {
+  margin-top: 0.75rem;
 }
 
 /* closing lyric + the one warm, handwritten, gold accent */
