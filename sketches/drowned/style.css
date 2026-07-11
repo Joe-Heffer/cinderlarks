@@ -2,7 +2,8 @@
    A single, self-contained dark page: the moment just before going
    under. Same typographic instincts as the site's other sketches
    (literary serif + a single handwritten accent), but its own palette,
-   layout and CSS — nothing shared or imported from other sketches. */
+   layout and CSS — only the icon font is vendored from shared/, nothing
+   else is shared or imported from other sketches. */
 
 :root {
   --color-bg: #2E3440;        /* deep muted ink-navy */
@@ -49,26 +50,37 @@ h1 {
   color: var(--color-text-dim);
 }
 
-.wayfinding {
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem 1rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  padding: 1.75rem 1rem 1rem;
+  border-bottom: 1px solid var(--color-hairline);
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.wayfinding a {
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   text-decoration: none;
-  opacity: 0.8;
+  color: var(--color-text-dim);
+  opacity: 0.75;
 }
-.wayfinding a:hover, .wayfinding a:focus-visible { opacity: 1; }
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: var(--color-pink);
+  opacity: 1;
+}
 
-.wordmark {
-  opacity: 0.6;
+.site-nav .material-icons {
+  font-size: 1.05em;
+  color: currentColor;
 }
 
 main.page {
@@ -177,6 +189,11 @@ main.page {
   pointer-events: none;
 }
 .audio-placeholder p { margin: 0.75rem 0 0; }
+.audio-placeholder .material-icons {
+  font-size: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.3rem;
+}
 
 footer.quiet-footer {
   max-width: var(--content-width);
@@ -186,6 +203,17 @@ footer.quiet-footer {
   border-top: 1px solid var(--color-hairline);
 }
 footer.quiet-footer p { margin: 0; opacity: 0.7; }
+
+.stamp-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-dim);
+  opacity: 0.45;
+}
+.stamp-row .motif { width: 18px; height: 18px; }
 
 /* fade-in — text and image surfacing gradually, this page only */
 @keyframes surface-in {
@@ -204,7 +232,8 @@ footer.quiet-footer p { margin: 0; opacity: 0.7; }
 }
 
 @media (max-width: 480px) {
-  .wayfinding, main.page, footer.quiet-footer { padding-left: 1rem; padding-right: 1rem; }
+  .site-nav, main.page, footer.quiet-footer { padding-left: 1rem; padding-right: 1rem; }
+  .site-nav { gap: 0.85rem 1rem; }
   h1 { font-size: 2rem; }
   .lyric-swell-line:nth-child(3) { font-size: 1.5rem; }
   .lyric-swell-line:nth-child(4) { font-size: 1.9rem; }
