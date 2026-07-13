@@ -89,7 +89,6 @@
     <a href="#top" class="font-logo tracking-wide text-sm sm:text-base text-ink shrink-0">The Cinderlarks</a>
     <div class="flex gap-3 sm:gap-8 text-[0.65rem] sm:text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap">
       <a href="#about" class="hover:text-sage-deep transition-colors">About</a>
-      <a href="#songs" class="hover:text-sage-deep transition-colors">Songs</a>
       <a href="#video" class="hover:text-sage-deep transition-colors">Watch</a>
       <a href="#live" class="hover:text-sage-deep transition-colors"><span class="sm:hidden">Live</span><span class="hidden sm:inline">Live &amp; Listen</span></a>
       <a href="#contact" class="hover:text-sage-deep transition-colors">Contact</a>
@@ -100,9 +99,9 @@
 <!-- hero -->
 <section id="top" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
 
-  <!-- still life hero: a real tabletop arrangement of the songs' motifs (Songs section below uses live action shots instead) -->
+  <!-- still life hero: a real tabletop arrangement of the songs' motifs -->
   <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-    <img src="images/hero-still-life.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
+    <img src="images/song-cups-and-rings.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
     <div class="absolute inset-0 bg-gradient-to-b from-cream/85 via-cream/65 to-pink-tint/40"></div>
   </div>
 
@@ -148,70 +147,8 @@
   <p class="reveal font-hand text-xl text-sage-deep mt-8" style="transition-delay:.2s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </section>
 
-<!-- songs -->
-<section id="songs" class="bg-cream-alt/60 border-y border-sage-tint py-24 sm:py-32" style="background-image: url('images/linen-cream.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply;">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-center text-ink mb-4">Songs</h2>
-    <p class="reveal text-center text-ink-soft mb-16 max-w-md mx-auto" style="transition-delay:.1s">Etiam purus nunc, consectetur at mollis et, tincidunt quis nibh.</p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-
-      <article class="reveal bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage transition-colors" style="transition-delay:.05s">
-        <div class="aspect-square overflow-hidden">
-          <img src="images/song-gold.jpg" alt="A guitarist's hand pressed to the fretboard mid-chord" class="gig-photo w-full h-full object-cover">
-        </div>
-        <div class="p-6">
-          <h3 class="font-display text-lg text-ink mb-1">Gold</h3>
-          <p class="text-sm text-ink-soft">a grandmother&rsquo;s ring, kept warm</p>
-        </div>
-      </article>
-
-      <article class="reveal bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage transition-colors" style="transition-delay:.1s">
-        <div class="aspect-square overflow-hidden">
-          <img src="images/song-cups-and-rings.jpg" alt="Two musicians playing acoustic guitar together under warm bar light" class="gig-photo w-full h-full object-cover">
-        </div>
-        <div class="p-6">
-          <h3 class="font-display text-lg text-ink mb-1">Cups and Rings</h3>
-          <p class="text-sm text-ink-soft">a chipped water jug, still poured from</p>
-        </div>
-      </article>
-
-      <article class="reveal bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage transition-colors" style="transition-delay:.15s">
-        <div class="aspect-square overflow-hidden">
-          <img src="images/song-letter.jpg" alt="A hand strumming an acoustic guitar under warm stage light" class="gig-photo w-full h-full object-cover">
-        </div>
-        <div class="p-6">
-          <h3 class="font-display text-lg text-ink mb-1">She Wrote Me a Letter</h3>
-          <p class="text-sm text-ink-soft">an envelope, never quite opened</p>
-        </div>
-      </article>
-
-      <article class="reveal bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage transition-colors" style="transition-delay:.2s">
-        <div class="aspect-square overflow-hidden">
-          <img src="images/song-fossils.jpg" alt="A drummer's hands mid-beat across the kit" class="gig-photo w-full h-full object-cover">
-        </div>
-        <div class="p-6">
-          <h3 class="font-display text-lg text-ink mb-1">Pocket Full of Fossils</h3>
-          <p class="text-sm text-ink-soft">small proof that time passed gently</p>
-        </div>
-      </article>
-
-      <article class="reveal bg-cream rounded-sm overflow-hidden border border-sage-tint hover:border-sage transition-colors sm:col-span-2 lg:col-span-1" style="transition-delay:.25s">
-        <div class="aspect-square overflow-hidden">
-          <img src="images/song-clock.jpg" alt="A vocalist bent close to the microphone mid-song" class="gig-photo w-full h-full object-cover">
-        </div>
-        <div class="p-6">
-          <h3 class="font-display text-lg text-ink mb-1">Where Did All the Time Go</h3>
-          <p class="text-sm text-ink-soft">a clock, kept running anyway</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
 <!-- watch -->
-<section id="video" class="py-24 sm:py-32">
+<section id="video" class="bg-cream-alt/60 border-y border-sage-tint py-24 sm:py-32" style="background-image: url('images/bg-watch.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply;">
   <div class="max-w-4xl mx-auto px-6 text-center">
     <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Watch</h2>
     <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Live, from the room.</p>
@@ -324,31 +261,33 @@
 </section>
 
 <!-- contact -->
-<section id="contact" class="max-w-2xl mx-auto px-6 py-24 sm:py-32 text-center">
-  <svg class="reveal w-6 h-6 mx-auto mb-6 text-plum/60" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
-    <rect x="4" y="8" width="24" height="18" rx="1"/>
-    <polyline points="4,8 16,20 28,8"/>
-  </svg>
-  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Get in Touch</h2>
-  <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">
-    Booking a show, licensing a song, or just want to say hello &mdash; drop us a line below.
-  </p>
+<section id="contact" class="bg-cream-alt/60 border-y border-sage-tint py-24 sm:py-32" style="background-image: url('images/bg-contact.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply;">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+    <svg class="reveal w-6 h-6 mx-auto mb-6 text-plum/60" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+      <rect x="4" y="8" width="24" height="18" rx="1"/>
+      <polyline points="4,8 16,20 28,8"/>
+    </svg>
+    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Get in Touch</h2>
+    <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">
+      Booking a show, licensing a song, or just want to say hello &mdash; drop us a line below.
+    </p>
 
-  <div class="reveal bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden" style="transition-delay:.15s">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
-      title="Contact The Cinderlarks"
-      class="w-full"
-      style="height: 760px; border: 0;"
-      loading="lazy">
-      Loading&hellip;
-    </iframe>
+    <div class="reveal bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden" style="transition-delay:.15s">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
+        title="Contact The Cinderlarks"
+        class="w-full"
+        style="height: 760px; border: 0;"
+        loading="lazy">
+        Loading&hellip;
+      </iframe>
+    </div>
+
+    <p class="reveal text-xs text-ink-soft/70 mt-4" style="transition-delay:.2s">
+      Form not loading?
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
+    </p>
   </div>
-
-  <p class="reveal text-xs text-ink-soft/70 mt-4" style="transition-delay:.2s">
-    Form not loading?
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
-  </p>
 </section>
 
 <!-- footer -->
