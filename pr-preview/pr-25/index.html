@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cinderlarks — Sheffield folk-rock, quietly</title>
+<meta name="description" content="The Cinderlarks: Sheffield folk-rock. Enigmatic melodies of loss and hope.">
+<meta property="og:title" content="The Cinderlarks — Sheffield folk-rock, quietly">
+<meta property="og:description" content="Enigmatic melodies of loss and hope.">
+<meta property="og:image" content="assets/images/song-cups-and-rings.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+<script src="assets/vendor/tailwind.js"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-cream: #F7F1E8;
+    --color-cream-alt: #EFE4D4;
+    --color-pink: #D9A9A0;
+    --color-pink-deep: #96524A;
+    --color-pink-tint: #F0DEDA;
+    --color-sage: #A9B79E;
+    --color-sage-deep: #4B5D40;
+    --color-sage-tint: #E4E9DF;
+    --color-plum: #7C5570;
+    --color-plum-deep: #55374B;
+    --color-plum-tint: #EADFE6;
+    --color-ink: #3A2E3D;
+    --color-ink-soft: #5C4F60;
+
+    --font-display: Fraunces, "Iowan Old Style", Georgia, serif;
+    --font-sans: "Public Sans", system-ui, sans-serif;
+    --font-hand: Caveat, cursive;
+    --font-logo: "Wild Honey", Fraunces, Georgia, serif;
+  }
+</style>
+
+<style>
+  @font-face {
+    font-family: "Wild Honey";
+    src: url('assets/fonts/wild-honey.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-image: url('assets/images/paper-grain.jpg');
+    background-repeat: repeat;
+    background-size: 900px auto;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.85; }
+  }
+  .animate-breathe { animation: breathe 4s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .animate-breathe { animation: none; }
+  }
+
+  .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
+</style>
+</head>
+
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- sticky nav — hidden at top, fades in once the hero has scrolled past -->
+<header id="site-nav"
+  class="fixed top-0 inset-x-0 z-50 opacity-0 -translate-y-2 pointer-events-none transition-all duration-700 ease-out bg-cream/90 backdrop-blur-sm border-b border-sage-tint">
+  <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-8 py-4" aria-label="Primary">
+    <a href="#top" class="font-logo tracking-wide text-sm sm:text-base text-ink shrink-0">The Cinderlarks</a>
+    <div class="flex gap-3 sm:gap-8 text-[0.65rem] sm:text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap">
+      <a href="#about" class="hover:text-sage-deep transition-colors">About</a>
+      <a href="#video" class="hover:text-sage-deep transition-colors">Watch</a>
+      <a href="#live" class="hover:text-sage-deep transition-colors"><span class="sm:hidden">Live</span><span class="hidden sm:inline">Live &amp; Listen</span></a>
+      <a href="#contact" class="hover:text-sage-deep transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- hero -->
+<section id="top" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
+
+  <!-- still life hero: a real tabletop arrangement of the songs' motifs -->
+  <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+    <img src="assets/images/song-cups-and-rings.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
+    <div class="absolute inset-0 bg-gradient-to-b from-cream/85 via-cream/65 to-pink-tint/40"></div>
+  </div>
+
+  <div class="relative z-10">
+    <p class="reveal font-hand text-2xl sm:text-3xl text-plum-deep mb-3">Originals Rock Band &mdash; Sheffield, Yorkshire</p>
+    <h1 class="reveal mb-6" style="transition-delay:.05s">
+      <img src="assets/images/logo-wordmark.png" alt="The Cinderlarks" class="mx-auto w-[280px] sm:w-[480px] md:w-[600px] h-auto">
+    </h1>
+    <p class="reveal max-w-xl mx-auto text-lg sm:text-xl text-ink-soft leading-relaxed" style="transition-delay:.15s">
+      Enigmatic melodies of loss and hope.
+    </p>
+
+    <div class="reveal flex flex-wrap items-center justify-center gap-4 mt-10" style="transition-delay:.2s">
+      <a href="https://www.facebook.com/profile.php?id=61585045120043" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-plum-deep text-cream px-6 py-3 rounded-sm hover:bg-plum transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M22 12a10 10 0 1 0-11.5 9.87v-6.98H7.9V12h2.6V9.8c0-2.56 1.53-3.98 3.87-3.98 1.12 0 2.3.2 2.3.2v2.5h-1.3c-1.28 0-1.68.79-1.68 1.6V12h2.86l-.46 2.89h-2.4v6.98A10 10 0 0 0 22 12"/>
+        </svg>
+        Follow on Facebook
+      </a>
+      <a href="https://www.instagram.com/the_cinderlarks" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-sage-deep text-sage-deep px-6 py-3 rounded-sm hover:bg-sage-tint transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Follow on Instagram
+      </a>
+    </div>
+
+    <a href="#about" class="reveal mt-16 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.3s" aria-label="Scroll to learn more about the band">
+      <span class="font-hand text-base">listen closer</span>
+      <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- about -->
+<section id="about" class="max-w-2xl mx-auto px-6 py-24 sm:py-32 text-center">
+  <svg class="reveal w-6 h-6 mx-auto mb-8 text-sage/70" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <circle cx="16" cy="16" r="10"/>
+    <line x1="16" y1="16" x2="16" y2="9"/>
+    <line x1="16" y1="16" x2="21" y2="13"/>
+  </svg>
+
+  <p class="reveal font-display italic text-2xl sm:text-3xl text-ink leading-relaxed mb-6" style="transition-delay:.1s">
+    &ldquo;usce at velit eu mauris commodo euismod. Nullam rutrum consequat rhoncus.&rdquo;
+  </p>
+
+  <p class="reveal text-ink-soft leading-relaxed" style="transition-delay:.15s">
+    The Cinderlarks are a Sheffield four-piece &mdash;
+    <span class="text-plum-deep">Joe C</span> on vocals,
+    <span class="text-plum-deep">Rich</span> on guitar,
+    <span class="text-plum-deep">Joe H</span> on bass and
+    <span class="text-plum-deep">Grzeg</span> on drums &mdash;
+    [music description goes here]
+  </p>
+
+  <p class="reveal font-hand text-xl text-sage-deep mt-8" style="transition-delay:.2s">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</section>
+
+<!-- watch -->
+<section id="video" class="bg-cream-alt/60 border-y border-sage-tint py-24 sm:py-32" style="background-image: url('assets/images/bg-watch.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply;">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Watch</h2>
+    <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Live, from the room.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
+          <iframe
+            src="https://player.vimeo.com/video/1209462567?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="The Cinderlarks - Alright"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="font-display text-ink mt-3">Alright</p>
+      </div>
+
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
+          <iframe
+            src="https://player.vimeo.com/video/1209464666?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="The Cinderlarks - The Kid Who Drowned"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="font-display text-ink mt-3">The Kid Who Drowned</p>
+      </div>
+
+      <div class="reveal" style="transition-delay:.25s">
+        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
+          <iframe
+            src="https://player.vimeo.com/video/1209467173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="The Cinderlarks - Cups &amp; Rings"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="font-display text-ink mt-3">Cups &amp; Rings</p>
+      </div>
+
+      <div class="reveal" style="transition-delay:.3s">
+        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
+          <iframe
+            src="https://player.vimeo.com/video/1209469089?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="The Cinderlarks - We Go Slow"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="font-display text-ink mt-3">We Go Slow</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<!-- live & listen -->
+<section id="live" class="max-w-3xl mx-auto px-6 py-24 sm:py-32 text-center">
+  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Live &amp; Listen</h2>
+  <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Cras in ullamcorper mauris. Nunc eget ultricies metus.</p>
+
+  <div class="reveal flex flex-wrap items-center justify-center gap-4 mb-16" style="transition-delay:.15s">
+    <a href="#" class="inline-flex items-center gap-2 bg-plum-deep text-cream px-6 py-3 rounded-sm hover:bg-plum transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Listen on Spotify
+    </a>
+    <a href="#" class="inline-flex items-center gap-2 border border-sage-deep text-sage-deep px-6 py-3 rounded-sm hover:bg-sage-tint transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Bandcamp
+    </a>
+  </div>
+
+  <ul class="reveal divide-y divide-sage-tint text-left max-w-md mx-auto" style="transition-delay:.2s">
+    <li class="flex items-center gap-4 py-4">
+      <svg class="w-5 h-5 text-sage-deep shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span class="font-display text-ink">14 Sep</span>
+      <span class="text-ink-soft text-sm">&mdash; The Leadmill, Sheffield</span>
+    </li>
+    <li class="flex items-center gap-4 py-4">
+      <svg class="w-5 h-5 text-sage-deep shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span class="font-display text-ink">2 Oct</span>
+      <span class="text-ink-soft text-sm">&mdash; Yellow Arch Studios, Sheffield</span>
+    </li>
+    <li class="flex items-center gap-4 py-4">
+      <svg class="w-5 h-5 text-sage-deep shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span class="font-display text-ink">21 Nov</span>
+      <span class="text-ink-soft text-sm">&mdash; The Washington, Sheffield</span>
+    </li>
+  </ul>
+  <p class="reveal font-hand text-lg text-sage-deep mt-8" style="transition-delay:.25s">more dates, soon &mdash; illustrative only</p>
+</section>
+
+<!-- contact -->
+<section id="contact" class="bg-cream-alt/60 border-y border-sage-tint py-24 sm:py-32" style="background-image: url('assets/images/bg-contact.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply;">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+    <svg class="reveal w-6 h-6 mx-auto mb-6 text-plum/60" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+      <rect x="4" y="8" width="24" height="18" rx="1"/>
+      <polyline points="4,8 16,20 28,8"/>
+    </svg>
+    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Get in Touch</h2>
+    <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">
+      Booking a show, licensing a song, or just want to say hello &mdash; drop us a line below.
+    </p>
+
+    <div class="reveal bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden" style="transition-delay:.15s">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
+        title="Contact The Cinderlarks"
+        class="w-full"
+        style="height: 760px; border: 0;"
+        loading="lazy">
+        Loading&hellip;
+      </iframe>
+    </div>
+
+    <p class="reveal text-xs text-ink-soft/70 mt-4" style="transition-delay:.2s">
+      Form not loading?
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
+    </p>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="border-t border-sage-tint bg-cream-alt/60 py-16 px-6 text-center">
+  <p class="font-logo tracking-wide text-base text-ink mb-2">The Cinderlarks</p>
+  <p class="text-ink-soft text-sm mb-6">Sheffield, South Yorkshire</p>
+  <p class="text-sm mb-4">
+    <a href="mailto:booking@cinderlarks.example" class="inline-flex items-center gap-1.5 text-sage-deep hover:text-plum-deep transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/>
+      </svg>
+      booking@cinderlarks.example
+    </a>
+  </p>
+  <p class="text-sm mb-10 flex items-center justify-center gap-6">
+    <a href="https://www.facebook.com/profile.php?id=61585045120043" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sage-deep hover:text-plum-deep transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.5 9.87v-6.98H7.9V12h2.6V9.8c0-2.56 1.53-3.98 3.87-3.98 1.12 0 2.3.2 2.3.2v2.5h-1.3c-1.28 0-1.68.79-1.68 1.6V12h2.86l-.46 2.89h-2.4v6.98A10 10 0 0 0 22 12"/>
+      </svg>
+      Facebook
+    </a>
+    <a href="https://www.instagram.com/the_cinderlarks" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sage-deep hover:text-plum-deep transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      Instagram
+    </a>
+  </p>
+</footer>
+
+<script>
+  var nav = document.getElementById('site-nav');
+  var hero = document.getElementById('top');
+
+  var navObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var showNav = !entry.isIntersecting;
+      nav.classList.toggle('opacity-0', !showNav);
+      nav.classList.toggle('opacity-100', showNav);
+      nav.classList.toggle('-translate-y-2', !showNav);
+      nav.classList.toggle('translate-y-0', showNav);
+      nav.classList.toggle('pointer-events-none', !showNav);
+      nav.classList.toggle('pointer-events-auto', showNav);
+    });
+  }, { threshold: 0.6 });
+  navObserver.observe(hero);
+
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(function (el) { revealObserver.observe(el); });
+</script>
+
+</body>
+</html>
