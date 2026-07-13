@@ -1,0 +1,73 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --config lychee.toml .
+          fail: true
+
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check spelling
+        uses: codespell-project/actions-codespell@v2
+        with:
+          skip: ./.git,./assets/vendor,./assets/images,./assets/fonts
+
+  html-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Lint HTML
+        run: npx --yes htmlhint@1 --config .htmlhintrc index.html
+
+  css-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install stylelint
+        run: npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1
+
+      - name: Lint CSS
+        run: npx stylelint --config .stylelintrc.json index.html
+
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check formatting (.editorconfig)
+        uses: editorconfig-checker/action-editorconfig-checker@v2
