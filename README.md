@@ -25,6 +25,16 @@ Then open http://localhost:8000 in a browser.
 npm pack @tailwindcss/browser@latest   # then copy dist/index.global.js over assets/vendor/tailwind.js
 ```
 
+## Checks
+
+CI (`.github/workflows/checks.yml`) lints and validates `index.html` on every push and pull request: link checking (lychee), spell checking (codespell), HTML linting (htmlhint), CSS linting (stylelint), and `.editorconfig` formatting. Run the lint checks locally with:
+
+```sh
+npx --yes htmlhint@1 --config .htmlhintrc index.html
+npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1 && npx stylelint --config .stylelintrc.json index.html
+npx --yes editorconfig-checker
+```
+
 ## Deployment
 
 Pushes to `main` deploy automatically via `.github/workflows/deploy.yml`.
