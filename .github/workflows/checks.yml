@@ -30,7 +30,7 @@ jobs:
       - name: Check spelling
         uses: codespell-project/actions-codespell@v2
         with:
-          skip: .git,assets/vendor,assets/images,assets/fonts
+          skip: ./.git,./assets/vendor,./assets/images,./assets/fonts
 
   html-lint:
     runs-on: ubuntu-latest
