@@ -51,6 +51,23 @@ Icon names/search: https://fonts.google.com/icons?icon.set=Material+Icons
 
 Version: 1.13.14. License: Apache-2.0 (see `LICENSE` in this folder).
 
+### `logo/logo-wordmark.png` + `logo/wild-honey.ttf`
+
+The Cinderlarks logo wordmark image and the "Wild Honey" display font used to
+set it, so any sketch can reuse the same brand mark instead of redrawing it.
+
+```html
+<style>
+  @font-face {
+    font-family: "Wild Honey";
+    src: url('../../shared/logo/wild-honey.ttf') format('truetype');
+    font-display: swap;
+  }
+</style>
+...
+<img src="../../shared/logo/logo-wordmark.png" alt="The Cinderlarks">
+```
+
 ## Updating
 
 These are point-in-time copies, not a live dependency. To pull a newer
