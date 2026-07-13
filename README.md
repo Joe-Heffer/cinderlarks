@@ -1,21 +1,13 @@
 # cinderlarks
 
-Website concept sketches — plain static HTML/CSS/JS prototypes, deployed to GitHub Pages.
+The Cinderlarks' website — a plain static HTML/CSS/JS page, deployed to GitHub Pages.
 
 ## Structure
 
-- `index.html` — landing page linking to every sketch.
-- `sketches/` — one folder per concept sketch. Each is a self-contained static site.
-- `sketches/template/` — starting point to copy for a new sketch, not a real design.
-- `shared/` — optional vendored static resources (Tailwind CSS, Material Icons) that any sketch can link to instead of using a CDN. See `shared/README.md`.
-
-## Adding a new sketch
-
-```sh
-cp -r sketches/template sketches/my-idea
-```
-
-Then edit `sketches/my-idea/`, and add a link to it from the root `index.html`.
+- `index.html` — the entire site.
+- `favicon.svg` — site favicon.
+- `assets/images/`, `assets/fonts/` — the site's own images and the "Wild Honey" logo font.
+- `assets/vendor/` — vendored Tailwind CSS v4 browser build (`@tailwindcss/browser`, MIT license, see `assets/vendor/LICENSE`), self-hosted instead of pulled from `cdn.tailwindcss.com`.
 
 ## Previewing locally
 
@@ -26,6 +18,12 @@ python3 -m http.server
 ```
 
 Then open http://localhost:8000 in a browser.
+
+## Updating vendored Tailwind
+
+```sh
+npm pack @tailwindcss/browser@latest   # then copy dist/index.global.js over assets/vendor/tailwind.js
+```
 
 ## Deployment
 
