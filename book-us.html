@@ -50,6 +50,8 @@
     background-attachment: fixed;
     background-blend-mode: multiply;
   }
+
+  .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
 </style>
 </head>
 
@@ -67,32 +69,60 @@
   </nav>
 </header>
 
-<section class="max-w-2xl mx-auto px-6 py-24 sm:py-32">
-  <h1 class="font-display italic text-3xl sm:text-4xl text-ink mb-8 text-center">Book us</h1>
-
-  <p class="text-ink-soft leading-relaxed mb-8 text-center">
-    If you'd like to book us, license a song or want to discuss a project we'd be happy to have a chat.
-    <a href="index.html#contact" class="text-plum-deep underline hover:text-plum transition-colors">Get in touch</a>.
+<section class="max-w-2xl mx-auto px-6 pt-24 sm:pt-32 pb-10 text-center">
+  <h1 class="font-display italic text-3xl sm:text-4xl text-ink mb-6">Book us</h1>
+  <p class="text-ink-soft leading-relaxed max-w-md mx-auto">
+    If you'd like to book us, license a song or want to discuss a project, tell us about it below and we'll get back to you.
   </p>
+</section>
 
-  <div class="text-ink-soft leading-relaxed space-y-4 mb-10">
-    <p>We are for fans of alt, indie, folk, rock.</p>
-    <p>Our music is atmospheric lyrical songs with intricate guitar work and bursts of art-rock.</p>
-    <p class="font-hand text-xl text-sage-deep">Think of The Mountain Goats, XTC and Turin Brakes.</p>
-    <p>We're always on the lookout for festivals, multi-band or support events, ideally with existing backline and engineer.</p>
-    <p>Our music is all originals, 45 minute long set.</p>
-    <p>We can be flexible as to how we play to suit different gigs and set-ups, including fully acoustic or intimate venues.</p>
+<section class="max-w-2xl mx-auto px-6 pb-16 sm:pb-20 text-center" id="contact">
+  <div class="bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden mb-4">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
+      title="Contact The Cinderlarks"
+      class="w-full"
+      style="height: 760px; border: 0;"
+      loading="lazy">
+      Loading&hellip;
+    </iframe>
   </div>
 
-  <div class="text-center">
-    <span class="inline-flex items-center gap-2 border border-sage-tint text-ink-soft/70 px-6 py-3 rounded-sm cursor-not-allowed" aria-disabled="true" title="Coming soon">
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="21" x2="20" y2="21"/>
-      </svg>
-      Download press kit
-    </span>
-    <p class="font-hand text-lg text-sage-deep mt-4">coming soon</p>
+  <p class="text-xs text-ink-soft/70 text-center">
+    Form not loading?
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
+  </p>
+</section>
+
+<section class="max-w-2xl mx-auto px-6 pb-20 sm:pb-24 text-center">
+  <svg class="w-6 h-6 mx-auto mb-8 text-sage/70" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <circle cx="16" cy="16" r="10"/>
+    <line x1="16" y1="16" x2="16" y2="9"/>
+    <line x1="16" y1="16" x2="21" y2="13"/>
+  </svg>
+  <div class="text-ink-soft leading-relaxed space-y-4">
+    <p>We are for fans of alt, indie, folk, rock. Our music is atmospheric lyrical songs with intricate guitar work and bursts of art-rock.</p>
+    <p>
+      Our music is all originals, 45 minute long set. We're always on the lookout for festivals, multi-band or support events, ideally with existing backline and engineer.
+      We can be flexible as to how we play to suit different gigs and set-ups, including fully acoustic or intimate venues.
+    </p>
   </div>
+  <p class="font-hand text-xl text-sage-deep mt-6">Think of The Mountain Goats, XTC and Turin Brakes.</p>
+</section>
+
+<div class="relative h-48 sm:h-64 md:h-80 overflow-hidden border-y border-sage-tint" aria-hidden="true">
+  <img src="assets/images/banner-book-us.jpg" alt="" class="absolute inset-0 w-full h-full object-cover gig-photo">
+  <div class="absolute inset-0 bg-gradient-to-b from-cream/30 via-transparent to-cream/50"></div>
+</div>
+
+<section class="max-w-2xl mx-auto px-6 pt-20 sm:pt-24 pb-24 text-center">
+  <span class="inline-flex items-center gap-2 border-2 border-sage-deep text-sage-deep font-medium px-6 py-3 rounded-sm cursor-not-allowed" aria-disabled="true" title="Coming soon">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="21" x2="20" y2="21"/>
+    </svg>
+    Download press kit
+  </span>
+  <p class="font-hand text-lg text-sage-deep mt-4">coming soon</p>
 </section>
 
 <footer class="border-t border-sage-tint bg-cream-alt/60 py-16 px-6 text-center">
