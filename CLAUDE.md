@@ -28,7 +28,8 @@ npx --yes editorconfig-checker
 
 - `index.html` — the entire site.
 - `favicon.svg` — site favicon.
-- `assets/images/` — the site's content images (background textures, hero photo, logo wordmark).
+- `assets/images/` — the site's content images (background textures, hero poster frame, logo wordmark).
+- `assets/videos/` — the looping hero background video (muted MP4/WebM pair, low-res).
 - `assets/fonts/` — the "Wild Honey" display font used for the logo wordmark.
 - `assets/vendor/` — vendored third-party code (Tailwind CSS v4 browser build + its LICENSE), self-hosted instead of pulled from a CDN.
 - `.htmlhintrc`, `.stylelintrc.json`, `.editorconfig` — lint/format config used by CI, not part of a build step. Formatting is intentionally lint-only (no Prettier): the file's dense, hand-authored style with long single-line Tailwind class lists is deliberate, and Prettier's default reformatting is a poor fit for it.
