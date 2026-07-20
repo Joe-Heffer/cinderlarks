@@ -74,6 +74,8 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .animate-breathe { animation: none; }
+    .hero-bg-video { display: none; }
+    .hero-bg-poster { display: block; }
   }
 
   .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
@@ -100,9 +102,13 @@
 <!-- hero -->
 <section id="top" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
 
-  <!-- still life hero: a real tabletop arrangement of the songs' motifs -->
+  <!-- looping green-room performance clip, interim placeholder until the dedicated band shoot -->
   <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-    <img src="assets/images/song-cups-and-rings.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
+    <img src="assets/images/hero-bg-poster.jpg" alt="" class="hero-bg-poster hidden absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
+    <video class="hero-bg-video absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30" autoplay muted loop playsinline poster="assets/images/hero-bg-poster.jpg">
+      <source src="assets/videos/hero-loop.webm" type="video/webm">
+      <source src="assets/videos/hero-loop.mp4" type="video/mp4">
+    </video>
     <div class="absolute inset-0 bg-gradient-to-b from-cream/85 via-cream/65 to-pink-tint/40"></div>
   </div>
 
