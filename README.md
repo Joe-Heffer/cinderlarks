@@ -1,4 +1,4 @@
-# cinderlarks
+# The Cinderlarks
 
 The Cinderlarks' website — a plain static HTML/CSS/JS page, deployed to GitHub Pages.
 
