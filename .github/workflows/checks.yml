@@ -18,7 +18,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --config lychee.toml .
+          args: --no-progress --config lychee.toml --root-dir ${{ github.workspace }} .
           fail: true
 
   spell-check:
