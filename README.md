@@ -40,6 +40,4 @@ npx --yes editorconfig-checker
 
 ## Deployment
 
-Pushes to `main` deploy automatically via `.github/workflows/deploy.yml`.
-
-**One-time setup:** in the repo settings, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+Pushes to `main` deploy automatically via `.github/workflows/deploy.yml`. See [RELEASING.md](RELEASING.md) for how deployment and PR previews actually work, and the one-time repo setting they depend on.

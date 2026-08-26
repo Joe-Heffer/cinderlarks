@@ -38,4 +38,6 @@ npx --yes editorconfig-checker
 - `assets/vendor/` — vendored third-party code (Tailwind CSS v4 browser build + its LICENSE), self-hosted instead of pulled from a CDN.
 - `.htmlhintrc`, `.stylelintrc.json`, `.editorconfig` — lint/format config used by CI, not part of a build step. Formatting is intentionally lint-only (no Prettier): the file's dense, hand-authored style with long single-line Tailwind class lists is deliberate, and Prettier's default reformatting is a poor fit for it.
 
-Deployment: pushes to `main` deploy automatically via `.github/workflows/deploy.yml` (GitHub Actions → GitHub Pages), uploading the whole repo as the Pages artifact.
+Deployment: pushes to `main` deploy automatically via `.github/workflows/deploy.yml`, which pushes the whole repo to the `gh-pages` branch (`peaceiris/actions-gh-pages`, `keep_files: true` so it doesn't clobber PR preview directories living alongside it). `.github/workflows/pr-preview.yml` (`rossjrw/pr-preview-action`) deploys/tears down a preview of each PR to `gh-pages` under `pr-preview/pr-<number>/`, linked from the PR itself.
+
+Both workflows assume the repo's GitHub Pages source (Settings → Pages, or `GET /repos/Joe-Heffer/cinderlarks/pages`) is set to the `gh-pages` branch, not `main`. If it's ever pointed at `main` instead, the root site still happens to work (GitHub auto-builds `main` directly), but everything pushed to `gh-pages` — including every PR preview — is silently never served (see #77).
