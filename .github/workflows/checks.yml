@@ -61,7 +61,9 @@ jobs:
         run: npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1
 
       - name: Lint CSS
-        run: npx stylelint --config .stylelintrc.json index.html
+        run: |
+          npx stylelint --config .stylelintrc.json index.html
+          npx stylelint --config .stylelintrc.json --customSyntax postcss assets/style.css
 
   format-check:
     runs-on: ubuntu-latest

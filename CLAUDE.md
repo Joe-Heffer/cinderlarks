@@ -14,19 +14,22 @@ Preview locally:
 python3 -m http.server
 ```
 
-Then open http://localhost:8000. There's no build or test command in this repo, but CI does lint `index.html` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
+Then open http://localhost:8000. There's no build or test command in this repo, but CI does lint `index.html` and `assets/style.css` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
 
 Lint locally (same checks CI runs in `.github/workflows/checks.yml`):
 
 ```sh
 npx --yes htmlhint@1 --config .htmlhintrc index.html
-npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1 && npx stylelint --config .stylelintrc.json index.html
+npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1
+npx stylelint --config .stylelintrc.json index.html
+npx stylelint --config .stylelintrc.json --customSyntax postcss assets/style.css
 npx --yes editorconfig-checker
 ```
 
 ## Architecture
 
-- `index.html` — the entire site.
+- `index.html` — the entire site markup, plus the inline `@theme` block that Tailwind's browser build compiles in-page (that part can't move to a stylesheet).
+- `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal`/`.animate-breathe` scroll-reveal animations, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
 - `favicon.svg` — site favicon.
 - `assets/images/` — the site's content images (background textures, hero poster frame, logo wordmark).
 - `assets/videos/` — the looping hero background video (muted MP4/WebM pair, low-res).
