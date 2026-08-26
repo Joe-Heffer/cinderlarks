@@ -1,5 +1,8 @@
 # The Cinderlarks
 
+[![Checks](https://github.com/Joe-Heffer/cinderlarks/actions/workflows/checks.yml/badge.svg)](https://github.com/Joe-Heffer/cinderlarks/actions/workflows/checks.yml)
+[![Deploy to GitHub Pages](https://github.com/Joe-Heffer/cinderlarks/actions/workflows/deploy.yml/badge.svg)](https://github.com/Joe-Heffer/cinderlarks/actions/workflows/deploy.yml)
+
 The Cinderlarks' website — a plain static HTML/CSS/JS page, deployed to GitHub Pages.
 
 ## Structure
