@@ -30,6 +30,7 @@ npx --yes editorconfig-checker
 
 - `index.html` — the entire site markup, plus the inline `@theme` block that Tailwind's browser build compiles in-page (that part can't move to a stylesheet).
 - `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal`/`.animate-breathe` scroll-reveal animations, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
+- `assets/script.js` — the page's scroll-behavior JS (nav fade-in, `.reveal` scroll-in animation via `IntersectionObserver`), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.
 - `assets/images/` — the site's content images (background textures, hero poster frame, logo wordmark).
 - `assets/videos/` — the looping hero background video (muted MP4/WebM pair, low-res).
