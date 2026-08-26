@@ -71,3 +71,37 @@ jobs:
 
       - name: Check formatting (.editorconfig)
         uses: editorconfig-checker/action-editorconfig-checker@v2
+
+  unused-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for unreferenced asset files
+        run: |
+          set -euo pipefail
+
+          # Content assets that should be referenced by filename from somewhere
+          # in the site source. assets/vendor is excluded: it's a vendored
+          # library (script tag references tailwind.js; LICENSE isn't "used").
+          mapfile -t assets < <(git ls-files -- 'assets/images' 'assets/videos' 'assets/fonts' 'favicon.svg')
+          mapfile -t sources < <(git ls-files -- '*.html' '*.css' '*.js' '*.json' '*.md')
+
+          unused=()
+          for asset in "${assets[@]}"; do
+            base=$(basename "$asset")
+            if ! grep -qF -- "$base" "${sources[@]}"; then
+              unused+=("$asset")
+            fi
+          done
+
+          if [ "${#unused[@]}" -gt 0 ]; then
+            echo "The following asset files aren't referenced anywhere in the site source:"
+            printf '  %s\n' "${unused[@]}"
+            echo
+            echo "Remove them, or reference them, before merging."
+            exit 1
+          fi
+
+          echo "No unused assets found."
