@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Check formatting (.editorconfig)
-        uses: editorconfig-checker/action-editorconfig-checker@v2
+        uses: editorconfig-checker/action-editorconfig-checker@v3.0.0
 
   unused-assets:
     runs-on: ubuntu-latest
