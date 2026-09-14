@@ -35,4 +35,63 @@ body {
   .hero-bg-poster { display: block; }
 }
 
+.section-edge {
+  box-shadow:
+    inset 0 8px 10px -10px rgb(0 0 0 / 32%),
+    inset 0 -8px 10px -10px rgb(0 0 0 / 32%);
+}
+
 .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 90%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox.is-open { display: flex; opacity: 1; }
+
+.lightbox-image {
+  max-width: min(92vw, 1200px);
+  max-height: 88vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 60%);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 10%);
+  color: #f5efe6;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox-close svg,
+.lightbox-nav svg { width: 1.5rem; height: 1.5rem; }
+
+.lightbox-close { top: 1rem; right: 1rem; }
+.lightbox-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+
+.lightbox-close:hover,
+.lightbox-nav:hover { background: rgb(255 255 255 / 25%); }
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible { outline: 2px solid #f5efe6; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox { transition: none; }
+}
