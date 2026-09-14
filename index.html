@@ -154,9 +154,10 @@
     <div class="flex items-center gap-3 sm:gap-8 text-[0.65rem] sm:text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap">
       <a href="#video" class="hover:text-sage-deep transition-colors">Watch</a>
       <a href="#about" class="hover:text-sage-deep transition-colors">About</a>
+      <a href="#gallery" class="hover:text-sage-deep transition-colors">Photos</a>
       <a href="#live" class="hover:text-sage-deep transition-colors">Live</a>
-      <a href="#contact" class="hover:text-sage-deep transition-colors">Contact</a>
       <a href="book-us.html" class="hover:text-sage-deep transition-colors">Book us</a>
+      <a href="#contact" class="hover:text-sage-deep transition-colors">Contact</a>
       <span class="flex items-center gap-3">
         <a href="https://www.facebook.com/profile.php?id=61585045120043" target="_blank" rel="noopener" aria-label="The Cinderlarks on Facebook" class="hover:text-sage-deep transition-colors">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -192,6 +193,10 @@
     </h1>
     <p class="reveal font-hand text-2xl sm:text-3xl text-plum-deep mb-3">Enigmatic melodies of loss and hope.</p>
 
+    <div class="reveal mt-10 mx-auto w-full max-w-2xl bg-white p-3 sm:p-4 shadow-sm" style="transition-delay:.1s">
+      <img src="assets/images/hero-band-photo.jpg" alt="The Cinderlarks band members" class="block w-full h-auto">
+    </div>
+
     <a href="#video" class="reveal mt-16 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.2s" aria-label="Scroll to watch The Cinderlarks">
       <span class="font-hand text-base">listen closer</span>
       <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -202,9 +207,8 @@
 </section>
 
 <!-- watch -->
-<section id="video" class="relative border-y border-sage-tint py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/bg-video-watch.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+<section id="video" class="border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 text-center">
     <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Watch</h2>
 
     <!-- Single Video Container -->
@@ -235,7 +239,9 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 <!-- about -->
-<section id="about" class="max-w-2xl mx-auto px-6 py-24 sm:py-32 text-center">
+<section id="about" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-11.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-6 py-10 sm:py-12 text-center bg-cream/85 shadow-xl">
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">About Us</h2>
   <p class="reveal text-ink-soft leading-relaxed" style="transition-delay:.1s">
     The Cinderlarks are a Sheffield four-piece &mdash;
@@ -249,7 +255,39 @@
     For fans of alt, indie, folk, rock &mdash; atmospheric lyrical songs, intricate guitar work with bursts of art-rock.
   </p>
 
-  <a href="#live" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.2s" aria-label="Scroll to socials for gigs and music">
+  <a href="#gallery" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.2s" aria-label="Scroll to photos">
+    <span class="font-hand text-base">take a look</span>
+    <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </a>
+  </div>
+</section>
+
+<!-- gallery -->
+<section id="gallery" class="max-w-5xl mx-auto px-6 py-24 sm:py-32 text-center">
+  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Photos</h2>
+  <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Moments from the road and the stage.</p>
+
+  <div class="grid grid-cols-3 gap-2 sm:gap-6">
+    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.05s">
+      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-01.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
+        <img src="assets/images/gallery/gallery-01.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
+      </button>
+    </div>
+    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.15s">
+      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-04.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
+        <img src="assets/images/gallery/gallery-04.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
+      </button>
+    </div>
+    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.25s">
+      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-08.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
+        <img src="assets/images/gallery/gallery-08.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
+      </button>
+    </div>
+  </div>
+
+  <a href="#live" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.25s" aria-label="Scroll to socials for gigs and music">
     <span class="font-hand text-base">catch us live</span>
     <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <polyline points="6 9 12 15 18 9"/>
@@ -257,8 +295,31 @@
   </a>
 </section>
 
+<!-- gallery lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close photo viewer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+  <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+  <img class="lightbox-image" src="assets/images/gallery/gallery-01.jpg" alt="">
+</div>
+
 <!-- live -->
-<section id="live" class="max-w-4xl mx-auto px-6 py-24 sm:py-32 text-center">
+<section id="live" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-05.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Live</h2>
   <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Come and see us play.</p>
 
@@ -330,19 +391,28 @@
     </a>
   </div>
 
-  <a href="#contact" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.35s" aria-label="Scroll to the contact form">
+  <a href="#book" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.35s" aria-label="Scroll to booking info">
     <span class="font-hand text-base">let's talk</span>
     <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <polyline points="6 9 12 15 18 9"/>
     </svg>
   </a>
+  </div>
+</section>
+
+<!-- book -->
+<section id="book" class="border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Looking to Book Us?</h2>
+  <p class="reveal text-ink-soft leading-relaxed mb-10" style="transition-delay:.1s">Get in touch for gigs, festivals and private events.</p>
+  <a href="book-us.html" class="reveal inline-flex items-center gap-2 bg-plum-deep text-cream px-6 py-3 rounded-sm hover:bg-plum transition-colors" style="transition-delay:.15s">Book us</a>
+  </div>
 </section>
 
 <!-- contact -->
-<section id="contact" class="relative border-y border-sage-tint py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/bg-contact.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
-  <div class="relative z-10">
-  <div class="max-w-2xl mx-auto px-6 text-center">
+<section id="contact" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
+  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-09.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
     <div class="reveal bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden" style="transition-delay:.15s">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
@@ -359,14 +429,6 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
     </p>
   </div>
-  </div>
-</section>
-
-<!-- book -->
-<section id="book" class="max-w-2xl mx-auto px-6 py-24 sm:py-32 text-center">
-  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Looking to Book Us?</h2>
-  <p class="reveal text-ink-soft leading-relaxed mb-10" style="transition-delay:.1s">Get in touch for gigs, festivals and private events.</p>
-  <a href="book-us.html" class="reveal inline-flex items-center gap-2 bg-plum-deep text-cream px-6 py-3 rounded-sm hover:bg-plum transition-colors" style="transition-delay:.15s">Book us</a>
 </section>
 
 <!-- footer -->
@@ -395,6 +457,9 @@
       Instagram
     </a>
   </p>
+  <p class="text-cream/50 text-xs">Photography and videography by <a href="https://lewischetcuti.com/" target="_blank" rel="noopener" class="underline hover:text-pink-tint transition-colors">Lewis Chetcuti</a></p>
+  <p class="text-cream/50 text-xs mt-1">Web design by <a href="https://heffer.info" target="_blank" rel="noopener" class="underline hover:text-pink-tint transition-colors">Joe Heffer</a></p>
+  <p class="text-cream/40 text-xs mt-4">&copy; <span id="copyright-year"></span> The Cinderlarks. All rights reserved.</p>
 </footer>
 
 <script src="assets/script.js"></script>
