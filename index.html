@@ -126,10 +126,7 @@
     <div class="flex items-center gap-3 sm:gap-8 text-[0.65rem] sm:text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap">
       <a href="#video" class="hover:text-sage-deep transition-colors">Watch</a>
       <a href="#about" class="hover:text-sage-deep transition-colors">About</a>
-      <a href="#gallery" class="hover:text-sage-deep transition-colors">Photos</a>
       <a href="#live" class="hover:text-sage-deep transition-colors">Live</a>
-      <a href="book-us.html" class="hover:text-sage-deep transition-colors">Book us</a>
-      <a href="#contact" class="hover:text-sage-deep transition-colors">Contact</a>
       <span class="flex items-center gap-3">
         <a href="https://www.facebook.com/profile.php?id=61585045120043" target="_blank" rel="noopener" aria-label="The Cinderlarks on Facebook" class="hover:text-sage-deep transition-colors">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -147,75 +144,53 @@
 </header>
 
 <!-- hero -->
-<section id="top" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
+<!-- phones: full uncropped photo stacked above the text; sm+: text overlaid on the photo -->
+<section id="top" class="relative flex flex-col items-center sm:justify-center overflow-hidden text-center sm:min-h-[min(100svh,56vw)] sm:px-6 sm:py-20">
 
-  <!-- looping green-room performance clip, interim placeholder until the dedicated band shoot -->
-  <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-    <img src="assets/images/hero-bg-poster.jpg" alt="" class="hero-bg-poster hidden absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30">
-    <video class="hero-bg-video absolute inset-0 w-full h-full object-cover opacity-25 sm:opacity-30" autoplay muted loop playsinline poster="assets/images/hero-bg-poster.jpg">
-      <source src="assets/videos/hero-loop.webm" type="video/webm">
-      <source src="assets/videos/hero-loop.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-cream/85 via-cream/65 to-pink-tint/40"></div>
+  <div class="relative w-full aspect-[1984/1070] sm:absolute sm:inset-0 sm:aspect-auto sm:z-0 pointer-events-none">
+    <img src="assets/images/hero-band-photo.jpg" alt="The Cinderlarks band members" class="absolute inset-0 w-full h-full object-cover object-[center_35%]">
+    <div class="hidden sm:block absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/70"></div>
   </div>
 
-  <div class="relative z-10">
+  <div class="relative z-10 px-6 py-10 sm:p-0">
     <h1 class="reveal mb-6" style="transition-delay:.05s">
-      <img src="assets/images/logo-wordmark.png" alt="The Cinderlarks" class="mx-auto w-[280px] sm:w-[480px] md:w-[600px] h-auto">
+      <img src="assets/images/logo-wordmark.png" alt="The Cinderlarks" class="mx-auto w-[280px] sm:w-[480px] md:w-[600px] h-auto sm:brightness-0 sm:invert sm:drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
     </h1>
-    <p class="reveal font-hand text-2xl sm:text-3xl text-plum-deep mb-3">Enigmatic melodies of loss and hope.</p>
-
-    <div class="reveal mt-10 mx-auto w-full max-w-2xl bg-white p-3 sm:p-4 shadow-sm" style="transition-delay:.1s">
-      <img src="assets/images/hero-band-photo.jpg" alt="The Cinderlarks band members" class="block w-full h-auto">
-    </div>
-
-    <a href="#video" class="reveal mt-16 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.2s" aria-label="Scroll to watch The Cinderlarks">
-      <span class="font-hand text-base">listen closer</span>
-      <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
+    <p class="reveal font-hand text-2xl sm:text-3xl text-plum-deep sm:text-cream mb-3">Enigmatic melodies of loss and hope.</p>
   </div>
+
+  <a href="#video" class="scroll-cue relative z-10 mb-6 text-plum-deep sm:absolute sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 sm:mb-0 sm:text-cream" aria-label="Next section: Watch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
 </section>
 
 <!-- watch -->
-<section id="video" class="border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Watch</h2>
-
-    <!-- Single Video Container -->
-    <div class="max-w-2xl mx-auto">
-      <div class="reveal" style="transition-delay:.15s">
-        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
-          <iframe
-            src="https://player.vimeo.com/video/1226595524?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
-            class="w-full h-full"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="Vimeo Video"
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
+<section id="video" class="border-y border-sage-tint pt-0 pb-16 sm:pb-20 overflow-hidden">
+  <!-- Full-bleed video -->
+  <div class="reveal w-screen relative left-1/2 right-1/2 -mx-[50vw]" style="transition-delay:.15s">
+    <div class="aspect-video overflow-hidden bg-ink">
+      <iframe
+        src="https://player.vimeo.com/video/1226595524?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+        class="w-full h-full"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Vimeo Video"
+        loading="lazy">
+      </iframe>
     </div>
-
-    <a href="#about" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.25s" aria-label="Scroll to read more about the band">
-      <span class="font-hand text-base">come along</span>
-      <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
   </div>
+
+  <a href="#about" class="scroll-cue mt-10 -mb-6 text-sage-deep" aria-label="Next section: About">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
 </section>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 <!-- about -->
-<section id="about" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-11.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
-  <div class="relative z-10 max-w-2xl mx-auto px-6 py-10 sm:py-12 text-center bg-cream/85 shadow-xl">
-  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">About Us</h2>
-  <p class="reveal text-ink-soft leading-relaxed" style="transition-delay:.1s">
+<section id="about" class="border-y border-sage-tint py-16 sm:py-20 overflow-hidden">
+  <div class="max-w-2xl mx-auto px-6 text-center">
+  <p class="reveal text-ink-soft leading-relaxed">
     The Cinderlarks are a Sheffield four-piece &mdash;
     <span class="text-plum-deep">Joe C</span> on vocals and rhythm guitar,
     <span class="text-plum-deep">Rich</span> on lead guitar,
@@ -227,41 +202,58 @@
     For fans of alt, indie, folk, rock &mdash; atmospheric lyrical songs, intricate guitar work with bursts of art-rock.
   </p>
 
-  <a href="#gallery" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.2s" aria-label="Scroll to photos">
-    <span class="font-hand text-base">take a look</span>
-    <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
+  <a href="#gallery" class="scroll-cue mt-10 -mb-6 text-sage-deep" aria-label="Next section: Behind the scenes">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
   </a>
   </div>
 </section>
 
 <!-- gallery -->
-<section id="gallery" class="max-w-5xl mx-auto px-6 py-24 sm:py-32 text-center">
-  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Photos</h2>
-  <div class="grid grid-cols-3 gap-2 sm:gap-6">
-    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.05s">
-      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-01.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="assets/images/gallery/gallery-01.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
-      </button>
+<section id="gallery" class="py-16 sm:py-20 text-center">
+  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-8 sm:mb-10 px-6">Behind the scenes</h2>
+
+  <!-- edge-to-edge justified mosaic: each tile's --r is its display aspect ratio, each pair's --pr the sum of its tiles' -->
+  <div class="bts-mosaic">
+    <div class="bts-row reveal" style="transition-delay:.1s">
+      <div class="bts-pair" style="--pr: 2.167">
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 1.5" data-full="assets/images/gallery/bts-042-full.jpg" data-caption="The Cinderlarks rehearsing together" aria-label="View larger photo: The Cinderlarks rehearsing together">
+          <img src="assets/images/gallery/bts-042.jpg" alt="The Cinderlarks rehearsing together" width="1400" height="934" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 0.667" data-full="assets/images/gallery/bts-028-full.jpg" data-caption="Joe C singing" aria-label="View larger photo: Joe C singing">
+          <img src="assets/images/gallery/bts-028.jpg" alt="Joe C singing" width="934" height="1400" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+      </div>
+      <div class="bts-pair" style="--pr: 2.37">
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 0.87; --pos: center 40%" data-full="assets/images/gallery/bts-024-full.jpg" data-caption="Rich playing lead guitar" aria-label="View larger photo: Rich playing lead guitar">
+          <img src="assets/images/gallery/bts-024.jpg" alt="Rich playing lead guitar" width="934" height="1400" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 1.5" data-full="assets/images/gallery/bts-023-full.jpg" data-caption="Grzeg laughing behind the drum kit" aria-label="View larger photo: Grzeg laughing behind the drum kit">
+          <img src="assets/images/gallery/bts-023.jpg" alt="Grzeg laughing behind the drum kit" width="1400" height="934" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+      </div>
     </div>
-    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.15s">
-      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-04.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="assets/images/gallery/gallery-04.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
-      </button>
-    </div>
-    <div class="reveal bg-white p-1.5 sm:p-3 shadow-md" style="transition-delay:.25s">
-      <button type="button" class="gallery-thumb block w-full h-full cursor-zoom-in" data-full="assets/images/gallery/gallery-12.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="assets/images/gallery/gallery-12.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full h-full">
-      </button>
+    <div class="bts-row reveal" style="transition-delay:.2s">
+      <div class="bts-pair" style="--pr: 3">
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 1.5; --pos: center 30%" data-full="assets/images/gallery/bts-026-full.jpg" data-caption="Joe H playing bass" aria-label="View larger photo: Joe H playing bass">
+          <img src="assets/images/gallery/bts-026.jpg" alt="Joe H playing bass" width="934" height="1400" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 1.5" data-full="assets/images/gallery/bts-032-full.jpg" data-caption="Rich looking down at his guitar" aria-label="View larger photo: Rich looking down at his guitar">
+          <img src="assets/images/gallery/bts-032.jpg" alt="Rich looking down at his guitar" width="1400" height="934" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+      </div>
+      <div class="bts-pair" style="--pr: 1.53">
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 0.68" data-full="assets/images/gallery/bts-004-full.jpg" data-caption="The Cinderlarks together on a sofa" aria-label="View larger photo: The Cinderlarks together on a sofa">
+          <img src="assets/images/gallery/bts-004.jpg" alt="The Cinderlarks together on a sofa" width="934" height="1400" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+        <button type="button" class="gallery-thumb bts-tile cursor-zoom-in" style="--r: 0.85; --pos: center 40%" data-full="assets/images/gallery/bts-030-full.jpg" data-caption="Joe H mid-conversation" aria-label="View larger photo: Joe H mid-conversation">
+          <img src="assets/images/gallery/bts-030.jpg" alt="Joe H mid-conversation" width="934" height="1400" loading="lazy" decoding="async" class="gig-photo">
+        </button>
+      </div>
     </div>
   </div>
 
-  <a href="#live" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.25s" aria-label="Scroll to socials for gigs and music">
-    <span class="font-hand text-base">catch us live</span>
-    <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
+  <a href="#live" class="scroll-cue mt-10 -mb-6 text-sage-deep" aria-label="Next section: Live">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
   </a>
 </section>
 
@@ -283,13 +275,12 @@
       <polyline points="9 18 15 12 9 6"/>
     </svg>
   </button>
-  <img class="lightbox-image" src="assets/images/gallery/gallery-01.jpg" alt="">
+  <img class="lightbox-image" src="assets/images/gallery/bts-042-full.jpg" alt="">
 </div>
 
 <!-- live -->
-<section id="live" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-05.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+<section id="live" class="border-y border-sage-tint py-16 sm:py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Live</h2>
   <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Come and see us play.</p>
 
@@ -336,44 +327,6 @@
       Follow on Instagram
     </a>
   </div>
-
-  <a href="#book" class="reveal mt-14 inline-flex flex-col items-center gap-2 text-ink-soft hover:text-sage-deep transition-colors" style="transition-delay:.35s" aria-label="Scroll to booking info">
-    <span class="font-hand text-base">let's talk</span>
-    <svg class="w-5 h-5 animate-breathe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
-  </a>
-  </div>
-</section>
-
-<!-- book -->
-<section id="book" class="border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="max-w-2xl mx-auto px-6 text-center">
-  <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Looking to Book Us?</h2>
-  <p class="reveal text-ink-soft leading-relaxed mb-10" style="transition-delay:.1s">Get in touch for gigs, festivals and private events.</p>
-  <a href="book-us.html" class="reveal inline-flex items-center gap-2 bg-plum-deep text-cream px-6 py-3 rounded-sm hover:bg-plum transition-colors" style="transition-delay:.15s">Book us</a>
-  </div>
-</section>
-
-<!-- contact -->
-<section id="contact" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('assets/images/gallery/gallery-09.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
-  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
-    <div class="reveal bg-cream rounded-sm border border-sage-tint shadow-sm overflow-hidden" style="transition-delay:.15s">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?embedded=true"
-        title="Contact The Cinderlarks"
-        class="w-full"
-        style="height: 760px; border: 0;"
-        loading="lazy">
-        Loading&hellip;
-      </iframe>
-    </div>
-
-    <p class="reveal text-xs text-ink-soft/70 mt-4" style="transition-delay:.2s">
-      Form not loading?
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSecakbllDtnWvkmqxzGakQCzd91OteLqpRhC9YppSv2b5EHLQ/viewform?usp=dialog" target="_blank" rel="noopener" class="underline hover:text-plum-deep transition-colors">Open it in a new tab</a>.
-    </p>
   </div>
 </section>
 
