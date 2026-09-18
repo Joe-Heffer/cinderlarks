@@ -3,6 +3,7 @@
   "customSyntax": "postcss-html",
   "ignoreFiles": ["assets/vendor/**"],
   "rules": {
-    "declaration-block-single-line-max-declarations": null
+    "declaration-block-single-line-max-declarations": null,
+    "custom-property-empty-line-before": null
   }
 }
