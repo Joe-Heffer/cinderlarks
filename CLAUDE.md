@@ -30,11 +30,10 @@ npx --yes editorconfig-checker
 
 - `index.html` — the entire site markup, plus the inline `@theme` block that Tailwind's browser build compiles in-page (that part can't move to a stylesheet).
 - `epk/index.html` — the electronic press kit, served at `/epk/`. Deliberately unlisted: `noindex` robots meta, no canonical/OG/JSON-LD, not linked from the other pages, and kept out of `sitemap.xml` and `robots.txt` (a `Disallow` would advertise the URL and stop crawlers seeing the `noindex`). Reuses `assets/style.css` and `assets/script.js` via `../` paths, so it keeps the `#site-nav`/`#top`/`#copyright-year`/`#lightbox` ids that the script expects. Placeholders for assets not yet delivered are marked with `TODO` comments.
-- `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal`/`.animate-breathe` scroll-reveal animations, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
+- `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal` scroll-reveal animation, gallery lightbox, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
 - `assets/script.js` — the page's scroll-behavior JS (nav fade-in, `.reveal` scroll-in animation via `IntersectionObserver`), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.
 - `assets/images/` — the site's content images (background textures, hero poster frame, logo wordmark).
-- `assets/videos/` — the looping hero background video (muted MP4/WebM pair, low-res).
 - `assets/fonts/` — the "Wild Honey" display font used for the logo wordmark.
 - `assets/vendor/` — vendored third-party code (Tailwind CSS v4 browser build + its LICENSE), self-hosted instead of pulled from a CDN.
 - `.htmlhintrc`, `.stylelintrc.json`, `.editorconfig` — lint/format config used by CI, not part of a build step. Formatting is intentionally lint-only (no Prettier): the file's dense, hand-authored style with long single-line Tailwind class lists is deliberate, and Prettier's default reformatting is a poor fit for it.
