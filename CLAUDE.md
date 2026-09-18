@@ -14,14 +14,14 @@ Preview locally:
 python3 -m http.server
 ```
 
-Then open http://localhost:8000. There's no build or test command in this repo, but CI does lint `index.html` and `assets/style.css` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
+Then open http://localhost:8000. There's no build or test command in this repo, but CI does lint `index.html`, `epk/index.html` and `assets/style.css` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
 
 Lint locally (same checks CI runs in `.github/workflows/checks.yml`):
 
 ```sh
-npx --yes htmlhint@1 --config .htmlhintrc index.html
+npx --yes htmlhint@1 --config .htmlhintrc index.html epk/index.html
 npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1
-npx stylelint --config .stylelintrc.json index.html
+npx stylelint --config .stylelintrc.json index.html epk/index.html
 npx stylelint --config .stylelintrc.json --customSyntax postcss assets/style.css
 npx --yes editorconfig-checker
 ```
@@ -29,6 +29,7 @@ npx --yes editorconfig-checker
 ## Architecture
 
 - `index.html` — the entire site markup, plus the inline `@theme` block that Tailwind's browser build compiles in-page (that part can't move to a stylesheet).
+- `epk/index.html` — the electronic press kit, served at `/epk/`. Deliberately unlisted: `noindex` robots meta, no canonical/OG/JSON-LD, not linked from the other pages, and kept out of `sitemap.xml` and `robots.txt` (a `Disallow` would advertise the URL and stop crawlers seeing the `noindex`). Reuses `assets/style.css` and `assets/script.js` via `../` paths, so it keeps the `#site-nav`/`#top`/`#copyright-year`/`#lightbox` ids that the script expects. Placeholders for assets not yet delivered are marked with `TODO` comments.
 - `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal`/`.animate-breathe` scroll-reveal animations, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
 - `assets/script.js` — the page's scroll-behavior JS (nav fade-in, `.reveal` scroll-in animation via `IntersectionObserver`), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.

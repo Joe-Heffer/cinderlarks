@@ -44,7 +44,7 @@ jobs:
           node-version: 22
 
       - name: Lint HTML
-        run: npx --yes htmlhint@1 --config .htmlhintrc index.html
+        run: npx --yes htmlhint@1 --config .htmlhintrc index.html epk/index.html
 
   css-lint:
     runs-on: ubuntu-latest
@@ -62,7 +62,7 @@ jobs:
 
       - name: Lint CSS
         run: |
-          npx stylelint --config .stylelintrc.json index.html
+          npx stylelint --config .stylelintrc.json index.html epk/index.html
           npx stylelint --config .stylelintrc.json --customSyntax postcss assets/style.css
 
   format-check:
