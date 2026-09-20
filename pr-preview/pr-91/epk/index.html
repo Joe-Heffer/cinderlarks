@@ -92,32 +92,24 @@
 </section>
 
 <!-- watch -->
-<section id="video" class="border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Watch</h2>
-
-    <!-- TODO: replace with the combined 10-reel film -->
-    <div class="max-w-2xl mx-auto">
-      <div class="reveal" style="transition-delay:.15s">
-        <div class="aspect-video rounded-sm overflow-hidden border border-sage-tint shadow-sm bg-ink">
-          <iframe
-            src="https://player.vimeo.com/video/1226595524?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
-            class="w-full h-full"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="The Cinderlarks live"
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-    </div>
+<section id="video" class="overflow-hidden bg-ink">
+  <!-- TODO: replace with the combined 10-reel film -->
+  <div class="reveal aspect-video w-full">
+    <iframe
+      src="https://player.vimeo.com/video/1228561358?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+      class="w-full h-full"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="The Cinderlarks live"
+      loading="lazy">
+    </iframe>
   </div>
 </section>
 
 <!-- about -->
 <section id="about" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('../assets/images/gallery/gallery-11.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('../assets/images/album/11-large.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
   <div class="relative z-10 max-w-2xl mx-auto px-6 py-10 sm:py-12 text-center bg-cream/85 shadow-xl">
     <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">About</h2>
     <p class="reveal text-ink-soft leading-relaxed" style="transition-delay:.1s">
@@ -128,10 +120,9 @@
     </p>
 
     <!-- TODO: finish Rich's and Grzegorz's lines (highlighted placeholders) -->
-    <ul role="list" class="mt-10 space-y-8">
+    <ul role="list" class="mt-10 space-y-8 text-left">
       <li class="reveal flex items-start gap-5" style="transition-delay:.2s">
-        <!-- TODO: replace with Joe Chetcuti's profile photo (square, ~200px) -->
-        <div class="shrink-0 size-16 sm:size-20 rounded-full bg-sage-tint text-sage-deep font-display text-xl sm:text-2xl flex items-center justify-center" role="img" aria-label="Profile photo of Joe Chetcuti (placeholder)">JC</div>
+        <img src="../assets/images/band/joe-chetcuti.jpg" alt="Joe Chetcuti" width="256" height="256" loading="lazy" class="shrink-0 size-16 sm:size-20 rounded-full object-cover">
         <div>
         <h3 class="font-display text-xl text-plum-deep">Joe Chetcuti</h3>
         <p class="text-sm uppercase tracking-wide text-sage-deep mb-1">Vocals &amp; rhythm guitar</p>
@@ -139,8 +130,7 @@
         </div>
       </li>
       <li class="reveal flex items-start gap-5" style="transition-delay:.25s">
-        <!-- TODO: replace with Rich Mooney's profile photo (square, ~200px) -->
-        <div class="shrink-0 size-16 sm:size-20 rounded-full bg-sage-tint text-sage-deep font-display text-xl sm:text-2xl flex items-center justify-center" role="img" aria-label="Profile photo of Rich Mooney (placeholder)">RM</div>
+        <img src="../assets/images/band/rich-mooney.jpg" alt="Rich Mooney" width="256" height="256" loading="lazy" class="shrink-0 size-16 sm:size-20 rounded-full object-cover">
         <div>
         <h3 class="font-display text-xl text-plum-deep">Rich Mooney</h3>
         <p class="text-sm uppercase tracking-wide text-sage-deep mb-1">Lead guitar</p>
@@ -148,8 +138,7 @@
         </div>
       </li>
       <li class="reveal flex items-start gap-5" style="transition-delay:.3s">
-        <!-- TODO: replace with Joe Heffer's profile photo (square, ~200px) -->
-        <div class="shrink-0 size-16 sm:size-20 rounded-full bg-sage-tint text-sage-deep font-display text-xl sm:text-2xl flex items-center justify-center" role="img" aria-label="Profile photo of Joe Heffer (placeholder)">JH</div>
+        <img src="../assets/images/band/joe-heffer.jpg" alt="Joe Heffer" width="256" height="256" loading="lazy" class="shrink-0 size-16 sm:size-20 rounded-full object-cover">
         <div>
         <h3 class="font-display text-xl text-plum-deep">Joe Heffer</h3>
         <p class="text-sm uppercase tracking-wide text-sage-deep mb-1">Bass</p>
@@ -157,8 +146,7 @@
         </div>
       </li>
       <li class="reveal flex items-start gap-5" style="transition-delay:.35s">
-        <!-- TODO: replace with Grzegorz Panczyk's profile photo (square, ~200px) -->
-        <div class="shrink-0 size-16 sm:size-20 rounded-full bg-sage-tint text-sage-deep font-display text-xl sm:text-2xl flex items-center justify-center" role="img" aria-label="Profile photo of Grzegorz Panczyk (placeholder)">GP</div>
+        <img src="../assets/images/band/grzegorz-panczyk.jpg" alt="Grzegorz Panczyk" width="256" height="256" loading="lazy" class="shrink-0 size-16 sm:size-20 rounded-full object-cover">
         <div>
         <h3 class="font-display text-xl text-plum-deep">Grzegorz Panczyk</h3>
         <p class="text-sm uppercase tracking-wide text-sage-deep mb-1">Drums</p>
@@ -172,52 +160,236 @@
 <!-- press photos -->
 <section id="photos" class="max-w-5xl mx-auto px-6 py-24 sm:py-32 text-center">
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Press photos</h2>
-  <!-- TODO: replace with the full set of hi-res press photos -->
-  <p class="reveal text-ink-soft mb-10" style="transition-delay:.1s">Click to view larger, or download. <span class="font-hand text-lg text-sage-deep">full hi-res set coming soon</span></p>
+  <p class="reveal text-ink-soft mb-6 max-w-md mx-auto" style="transition-delay:.1s">Click a photo to view it larger. For print-quality files, download the full-resolution originals.</p>
+  <div class="reveal mb-10" style="transition-delay:.15s">
+    <a href="https://drive.google.com/drive/folders/16rMEVGPOIKIdTWBQAnWnYefRzcjzrA6D?usp=sharing" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-plum-deep text-cream px-5 py-2.5 rounded-sm hover:bg-plum transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="12" y1="4" x2="12" y2="16"/><polyline points="6 10 12 16 18 10"/><line x1="5" y1="20" x2="19" y2="20"/>
+      </svg>
+      Download hi-res originals
+    </a>
+  </div>
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
-    <figure class="reveal col-span-2 sm:col-span-3 bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.05s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/hero-band-photo.jpg" data-caption="The Cinderlarks band members" aria-label="View larger photo of The Cinderlarks band members">
-        <img src="../assets/images/hero-band-photo.jpg" alt="The Cinderlarks band members" loading="lazy" class="gig-photo block w-full h-auto">
+  <div class="columns-2 sm:columns-3 gap-3 sm:gap-4 text-left">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/01-large.webp" data-caption="The Cinderlarks, photo 1 of 42" aria-label="View larger: The Cinderlarks, photo 1 of 42">
+        <img src="../assets/images/album/01-thumb.webp" alt="The Cinderlarks, photo 1 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/hero-band-photo.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.1s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-01.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-01.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/02-large.webp" data-caption="The Cinderlarks, photo 2 of 42" aria-label="View larger: The Cinderlarks, photo 2 of 42">
+        <img src="../assets/images/album/02-thumb.webp" alt="The Cinderlarks, photo 2 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-01.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.15s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-04.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-04.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/03-large.webp" data-caption="The Cinderlarks, photo 3 of 42" aria-label="View larger: The Cinderlarks, photo 3 of 42">
+        <img src="../assets/images/album/03-thumb.webp" alt="The Cinderlarks, photo 3 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-04.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.2s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-05.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-05.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/04-large.webp" data-caption="The Cinderlarks, photo 4 of 42" aria-label="View larger: The Cinderlarks, photo 4 of 42">
+        <img src="../assets/images/album/04-thumb.webp" alt="The Cinderlarks, photo 4 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-05.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.1s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-09.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-09.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/05-large.webp" data-caption="The Cinderlarks, photo 5 of 42" aria-label="View larger: The Cinderlarks, photo 5 of 42">
+        <img src="../assets/images/album/05-thumb.webp" alt="The Cinderlarks, photo 5 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-09.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.15s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-11.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-11.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/06-large.webp" data-caption="The Cinderlarks, photo 6 of 42" aria-label="View larger: The Cinderlarks, photo 6 of 42">
+        <img src="../assets/images/album/06-thumb.webp" alt="The Cinderlarks, photo 6 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-11.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
-    <figure class="reveal bg-white p-2 sm:p-3 shadow-md" style="transition-delay:.2s">
-      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/gallery/gallery-12.jpg" data-caption="The Cinderlarks performing live" aria-label="View larger photo of The Cinderlarks performing live">
-        <img src="../assets/images/gallery/gallery-12.jpg" alt="The Cinderlarks performing live" loading="lazy" class="gig-photo object-cover aspect-[4/5] w-full">
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/07-large.webp" data-caption="The Cinderlarks, photo 7 of 42" aria-label="View larger: The Cinderlarks, photo 7 of 42">
+        <img src="../assets/images/album/07-thumb.webp" alt="The Cinderlarks, photo 7 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
       </button>
-      <figcaption class="mt-2 text-right"><a href="../assets/images/gallery/gallery-12.jpg" download class="text-xs uppercase tracking-wide text-ink-soft hover:text-sage-deep transition-colors">Download</a></figcaption>
     </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/08-large.webp" data-caption="The Cinderlarks, photo 8 of 42" aria-label="View larger: The Cinderlarks, photo 8 of 42">
+        <img src="../assets/images/album/08-thumb.webp" alt="The Cinderlarks, photo 8 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/09-large.webp" data-caption="The Cinderlarks, photo 9 of 42" aria-label="View larger: The Cinderlarks, photo 9 of 42">
+        <img src="../assets/images/album/09-thumb.webp" alt="The Cinderlarks, photo 9 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/10-large.webp" data-caption="The Cinderlarks, photo 10 of 42" aria-label="View larger: The Cinderlarks, photo 10 of 42">
+        <img src="../assets/images/album/10-thumb.webp" alt="The Cinderlarks, photo 10 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/11-large.webp" data-caption="The Cinderlarks, photo 11 of 42" aria-label="View larger: The Cinderlarks, photo 11 of 42">
+        <img src="../assets/images/album/11-thumb.webp" alt="The Cinderlarks, photo 11 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/12-large.webp" data-caption="The Cinderlarks, photo 12 of 42" aria-label="View larger: The Cinderlarks, photo 12 of 42">
+        <img src="../assets/images/album/12-thumb.webp" alt="The Cinderlarks, photo 12 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/13-large.webp" data-caption="The Cinderlarks, photo 13 of 42" aria-label="View larger: The Cinderlarks, photo 13 of 42">
+        <img src="../assets/images/album/13-thumb.webp" alt="The Cinderlarks, photo 13 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/14-large.webp" data-caption="The Cinderlarks, photo 14 of 42" aria-label="View larger: The Cinderlarks, photo 14 of 42">
+        <img src="../assets/images/album/14-thumb.webp" alt="The Cinderlarks, photo 14 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/15-large.webp" data-caption="The Cinderlarks, photo 15 of 42" aria-label="View larger: The Cinderlarks, photo 15 of 42">
+        <img src="../assets/images/album/15-thumb.webp" alt="The Cinderlarks, photo 15 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/16-large.webp" data-caption="The Cinderlarks, photo 16 of 42" aria-label="View larger: The Cinderlarks, photo 16 of 42">
+        <img src="../assets/images/album/16-thumb.webp" alt="The Cinderlarks, photo 16 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/17-large.webp" data-caption="The Cinderlarks, photo 17 of 42" aria-label="View larger: The Cinderlarks, photo 17 of 42">
+        <img src="../assets/images/album/17-thumb.webp" alt="The Cinderlarks, photo 17 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/18-large.webp" data-caption="The Cinderlarks, photo 18 of 42" aria-label="View larger: The Cinderlarks, photo 18 of 42">
+        <img src="../assets/images/album/18-thumb.webp" alt="The Cinderlarks, photo 18 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/19-large.webp" data-caption="The Cinderlarks, photo 19 of 42" aria-label="View larger: The Cinderlarks, photo 19 of 42">
+        <img src="../assets/images/album/19-thumb.webp" alt="The Cinderlarks, photo 19 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/20-large.webp" data-caption="The Cinderlarks, photo 20 of 42" aria-label="View larger: The Cinderlarks, photo 20 of 42">
+        <img src="../assets/images/album/20-thumb.webp" alt="The Cinderlarks, photo 20 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/21-large.webp" data-caption="The Cinderlarks, photo 21 of 42" aria-label="View larger: The Cinderlarks, photo 21 of 42">
+        <img src="../assets/images/album/21-thumb.webp" alt="The Cinderlarks, photo 21 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/22-large.webp" data-caption="The Cinderlarks, photo 22 of 42" aria-label="View larger: The Cinderlarks, photo 22 of 42">
+        <img src="../assets/images/album/22-thumb.webp" alt="The Cinderlarks, photo 22 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/23-large.webp" data-caption="The Cinderlarks, photo 23 of 42" aria-label="View larger: The Cinderlarks, photo 23 of 42">
+        <img src="../assets/images/album/23-thumb.webp" alt="The Cinderlarks, photo 23 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/24-large.webp" data-caption="The Cinderlarks, photo 24 of 42" aria-label="View larger: The Cinderlarks, photo 24 of 42">
+        <img src="../assets/images/album/24-thumb.webp" alt="The Cinderlarks, photo 24 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/25-large.webp" data-caption="The Cinderlarks, photo 25 of 42" aria-label="View larger: The Cinderlarks, photo 25 of 42">
+        <img src="../assets/images/album/25-thumb.webp" alt="The Cinderlarks, photo 25 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/26-large.webp" data-caption="The Cinderlarks, photo 26 of 42" aria-label="View larger: The Cinderlarks, photo 26 of 42">
+        <img src="../assets/images/album/26-thumb.webp" alt="The Cinderlarks, photo 26 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/27-large.webp" data-caption="The Cinderlarks, photo 27 of 42" aria-label="View larger: The Cinderlarks, photo 27 of 42">
+        <img src="../assets/images/album/27-thumb.webp" alt="The Cinderlarks, photo 27 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/28-large.webp" data-caption="The Cinderlarks, photo 28 of 42" aria-label="View larger: The Cinderlarks, photo 28 of 42">
+        <img src="../assets/images/album/28-thumb.webp" alt="The Cinderlarks, photo 28 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/29-large.webp" data-caption="The Cinderlarks, photo 29 of 42" aria-label="View larger: The Cinderlarks, photo 29 of 42">
+        <img src="../assets/images/album/29-thumb.webp" alt="The Cinderlarks, photo 29 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/30-large.webp" data-caption="The Cinderlarks, photo 30 of 42" aria-label="View larger: The Cinderlarks, photo 30 of 42">
+        <img src="../assets/images/album/30-thumb.webp" alt="The Cinderlarks, photo 30 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/31-large.webp" data-caption="The Cinderlarks, photo 31 of 42" aria-label="View larger: The Cinderlarks, photo 31 of 42">
+        <img src="../assets/images/album/31-thumb.webp" alt="The Cinderlarks, photo 31 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/32-large.webp" data-caption="The Cinderlarks, photo 32 of 42" aria-label="View larger: The Cinderlarks, photo 32 of 42">
+        <img src="../assets/images/album/32-thumb.webp" alt="The Cinderlarks, photo 32 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/33-large.webp" data-caption="The Cinderlarks, photo 33 of 42" aria-label="View larger: The Cinderlarks, photo 33 of 42">
+        <img src="../assets/images/album/33-thumb.webp" alt="The Cinderlarks, photo 33 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/34-large.webp" data-caption="The Cinderlarks, photo 34 of 42" aria-label="View larger: The Cinderlarks, photo 34 of 42">
+        <img src="../assets/images/album/34-thumb.webp" alt="The Cinderlarks, photo 34 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/35-large.webp" data-caption="The Cinderlarks, photo 35 of 42" aria-label="View larger: The Cinderlarks, photo 35 of 42">
+        <img src="../assets/images/album/35-thumb.webp" alt="The Cinderlarks, photo 35 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/36-large.webp" data-caption="The Cinderlarks, photo 36 of 42" aria-label="View larger: The Cinderlarks, photo 36 of 42">
+        <img src="../assets/images/album/36-thumb.webp" alt="The Cinderlarks, photo 36 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/37-large.webp" data-caption="The Cinderlarks, photo 37 of 42" aria-label="View larger: The Cinderlarks, photo 37 of 42">
+        <img src="../assets/images/album/37-thumb.webp" alt="The Cinderlarks, photo 37 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/38-large.webp" data-caption="The Cinderlarks, photo 38 of 42" aria-label="View larger: The Cinderlarks, photo 38 of 42">
+        <img src="../assets/images/album/38-thumb.webp" alt="The Cinderlarks, photo 38 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/39-large.webp" data-caption="The Cinderlarks, photo 39 of 42" aria-label="View larger: The Cinderlarks, photo 39 of 42">
+        <img src="../assets/images/album/39-thumb.webp" alt="The Cinderlarks, photo 39 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/40-large.webp" data-caption="The Cinderlarks, photo 40 of 42" aria-label="View larger: The Cinderlarks, photo 40 of 42">
+        <img src="../assets/images/album/40-thumb.webp" alt="The Cinderlarks, photo 40 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/41-large.webp" data-caption="The Cinderlarks, photo 41 of 42" aria-label="View larger: The Cinderlarks, photo 41 of 42">
+        <img src="../assets/images/album/41-thumb.webp" alt="The Cinderlarks, photo 41 of 42" width="400" height="600" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+    <figure class="break-inside-avoid mb-3 sm:mb-4 bg-white p-2 sm:p-3 shadow-md">
+      <button type="button" class="gallery-thumb block w-full cursor-zoom-in" data-full="../assets/images/album/42-large.webp" data-caption="The Cinderlarks, photo 42 of 42" aria-label="View larger: The Cinderlarks, photo 42 of 42">
+        <img src="../assets/images/album/42-thumb.webp" alt="The Cinderlarks, photo 42 of 42" width="600" height="400" loading="lazy" decoding="async" class="gig-photo block w-full h-auto">
+      </button>
+    </figure>
+  </div>
+
+  <div class="mt-10">
+    <a href="https://drive.google.com/drive/folders/16rMEVGPOIKIdTWBQAnWnYefRzcjzrA6D?usp=sharing" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-plum-deep text-cream px-5 py-2.5 rounded-sm hover:bg-plum transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="12" y1="4" x2="12" y2="16"/><polyline points="6 10 12 16 18 10"/><line x1="5" y1="20" x2="19" y2="20"/>
+      </svg>
+      Download hi-res originals
+    </a>
   </div>
 </section>
 
@@ -239,12 +411,12 @@
       <polyline points="9 18 15 12 9 6"/>
     </svg>
   </button>
-  <img class="lightbox-image" src="../assets/images/hero-band-photo.jpg" alt="">
+  <img class="lightbox-image" src="../assets/images/album/01-large.webp" alt="">
 </div>
 
 <!-- reels -->
 <section id="reels" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('../assets/images/gallery/gallery-05.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-cream-alt opacity-40" style="background-image: url('../assets/images/album/05-large.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-blend-mode: multiply; filter: grayscale(0.4) brightness(0.55) blur(2px);" aria-hidden="true"></div>
   <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
     <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Reels</h2>
     <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Short live reels, downloadable in 4K and social formats.</p>
