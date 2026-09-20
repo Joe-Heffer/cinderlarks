@@ -4,7 +4,11 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
 
-concurrency: preview-${{ github.ref }}
+# Share the deploy workflow's group: both push to gh-pages, and concurrent pushes
+# are rejected with "cannot lock ref" (e.g. merging a PR fires both at once).
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 permissions:
   contents: write
