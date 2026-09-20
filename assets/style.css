@@ -48,10 +48,12 @@ body {
   50% { transform: translateY(6px); }
 }
 
+.scroll-cue-bob { animation: scroll-cue-bob 2.4s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .scroll-cue { animation: none; }
+  .scroll-cue, .scroll-cue-bob { animation: none; }
+  .scroll-cue-bob { animation: none; }
 }
 
 .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
