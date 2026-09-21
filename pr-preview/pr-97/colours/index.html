@@ -10,83 +10,133 @@
 <style>
 body { font: 16px system-ui, sans-serif; background: #F7F1E8; color: #3A2E3D; max-width: 56rem; margin: 2rem auto; padding: 0 1rem; }
 h1, h2 { font-family: Georgia, serif; }
-h2 { margin: 2rem 0 0.2rem; }
+h2 { margin: 2.5rem 0 0.2rem; }
+h3 { margin: 1.2rem 0 0.4rem; font-size: 0.95rem; }
 p { margin: 0.2rem 0 0.8rem; color: #5C4F60; }
 .row { display: flex; flex-wrap: wrap; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgb(0 0 0 / 20%); }
-.swatch { flex: 1 1 5rem; height: 110px; padding: 8px; font-size: 12px; display: flex; flex-direction: column; justify-content: flex-end; }
+.swatch { flex: 1 1 4.5rem; height: 90px; padding: 8px; font-size: 11px; display: flex; flex-direction: column; justify-content: flex-end; }
+.swatch b { font-size: 12px; }
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.5rem; }
+.pair { display: flex; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgb(0 0 0 / 20%); font-size: 12px; }
+.pair span { flex: 1; padding: 0.5rem; }
+.pair .bg { display: flex; flex-direction: column; }
+.ratio { font-weight: 700; }
+.pass { color: #1F6B2E; }
+.fail { color: #A12B2B; }
 .btn { display: inline-block; margin: 0.6rem 0.5rem 0 0; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; }
+.nearest { font-size: 0.9rem; }
+.nearest i { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; vertical-align: -0.1em; box-shadow: 0 0 0 1px rgb(0 0 0 / 25%); }
 </style>
 </head>
 <body>
 <h1>Accent colour options</h1>
-<p>Current palette (cream, pink, sage, plum, ink) on the left of each row, then the proposed accent as tint / base / deep.</p>
-<section>
-<h2>Ember amber</h2>
-<p>Ties to &ldquo;Cinder&rdquo;; roughly the complement of plum. Warm, vintage, gig-poster feel. Top pick for a call-to-action colour.</p>
-<div class="row">
-<div class="swatch" style="background:#F7F1E8;color:#3A2E3D"><b>cream</b>#F7F1E8</div>
-<div class="swatch" style="background:#D9A9A0;color:#3A2E3D"><b>pink</b>#D9A9A0</div>
-<div class="swatch" style="background:#A9B79E;color:#3A2E3D"><b>sage</b>#A9B79E</div>
-<div class="swatch" style="background:#7C5570;color:#FFFFFF"><b>plum</b>#7C5570</div>
-<div class="swatch" style="background:#3A2E3D;color:#FFFFFF"><b>ink</b>#3A2E3D</div>
-<div class="swatch" style="background:#F3E1BF;color:#3A2E3D"><b>tint</b>#F3E1BF</div>
-<div class="swatch" style="background:#D19A3F;color:#3A2E3D"><b>base</b>#D19A3F</div>
-<div class="swatch" style="background:#8A5A14;color:#FFFFFF"><b>deep</b>#8A5A14</div>
-</div>
-<span class="btn" style="background:#D19A3F;color:#3A2E3D">Get tickets</span>
-<span class="btn" style="background:#8A5A14;color:#FFFFFF">Listen now</span>
-<span class="btn" style="background:#F3E1BF;color:#8A5A14">Tour dates</span>
-</section>
-<section>
-<h2>Dusty teal</h2>
-<p>Complement of the pink/terracotta; a cool relief in a warm palette. Good for links and secondary buttons.</p>
-<div class="row">
-<div class="swatch" style="background:#F7F1E8;color:#3A2E3D"><b>cream</b>#F7F1E8</div>
-<div class="swatch" style="background:#D9A9A0;color:#3A2E3D"><b>pink</b>#D9A9A0</div>
-<div class="swatch" style="background:#A9B79E;color:#3A2E3D"><b>sage</b>#A9B79E</div>
-<div class="swatch" style="background:#7C5570;color:#FFFFFF"><b>plum</b>#7C5570</div>
-<div class="swatch" style="background:#3A2E3D;color:#FFFFFF"><b>ink</b>#3A2E3D</div>
-<div class="swatch" style="background:#DCE9E7;color:#3A2E3D"><b>tint</b>#DCE9E7</div>
-<div class="swatch" style="background:#6A9A9A;color:#FFFFFF"><b>base</b>#6A9A9A</div>
-<div class="swatch" style="background:#2F5C5E;color:#FFFFFF"><b>deep</b>#2F5C5E</div>
-</div>
-<span class="btn" style="background:#6A9A9A;color:#FFFFFF">Get tickets</span>
-<span class="btn" style="background:#2F5C5E;color:#FFFFFF">Listen now</span>
-<span class="btn" style="background:#DCE9E7;color:#2F5C5E">Tour dates</span>
-</section>
-<section>
-<h2>Smoky slate blue</h2>
-<p>Sits next to plum, so quiet and moody. Good for night/gig sections.</p>
-<div class="row">
-<div class="swatch" style="background:#F7F1E8;color:#3A2E3D"><b>cream</b>#F7F1E8</div>
-<div class="swatch" style="background:#D9A9A0;color:#3A2E3D"><b>pink</b>#D9A9A0</div>
-<div class="swatch" style="background:#A9B79E;color:#3A2E3D"><b>sage</b>#A9B79E</div>
-<div class="swatch" style="background:#7C5570;color:#FFFFFF"><b>plum</b>#7C5570</div>
-<div class="swatch" style="background:#3A2E3D;color:#FFFFFF"><b>ink</b>#3A2E3D</div>
-<div class="swatch" style="background:#E0E5EE;color:#3A2E3D"><b>tint</b>#E0E5EE</div>
-<div class="swatch" style="background:#7488A8;color:#FFFFFF"><b>base</b>#7488A8</div>
-<div class="swatch" style="background:#3B4A6B;color:#FFFFFF"><b>deep</b>#3B4A6B</div>
-</div>
-<span class="btn" style="background:#7488A8;color:#FFFFFF">Get tickets</span>
-<span class="btn" style="background:#3B4A6B;color:#FFFFFF">Listen now</span>
-<span class="btn" style="background:#E0E5EE;color:#3B4A6B">Tour dates</span>
-</section>
-<section>
-<h2>Burnt orange</h2>
-<p>Boldest option and the strongest contrast, but may compete with the dusty pink.</p>
-<div class="row">
-<div class="swatch" style="background:#F7F1E8;color:#3A2E3D"><b>cream</b>#F7F1E8</div>
-<div class="swatch" style="background:#D9A9A0;color:#3A2E3D"><b>pink</b>#D9A9A0</div>
-<div class="swatch" style="background:#A9B79E;color:#3A2E3D"><b>sage</b>#A9B79E</div>
-<div class="swatch" style="background:#7C5570;color:#FFFFFF"><b>plum</b>#7C5570</div>
-<div class="swatch" style="background:#3A2E3D;color:#FFFFFF"><b>ink</b>#3A2E3D</div>
-<div class="swatch" style="background:#F4DCCB;color:#3A2E3D"><b>tint</b>#F4DCCB</div>
-<div class="swatch" style="background:#C9673A;color:#FFFFFF"><b>base</b>#C9673A</div>
-<div class="swatch" style="background:#8A3A17;color:#FFFFFF"><b>deep</b>#8A3A17</div>
-</div>
-<span class="btn" style="background:#C9673A;color:#FFFFFF">Get tickets</span>
-<span class="btn" style="background:#8A3A17;color:#FFFFFF">Listen now</span>
-<span class="btn" style="background:#F4DCCB;color:#8A3A17">Tour dates</span>
-</section>
+<p>Each option is compared against the site&rsquo;s existing palette, taken from the <code>@theme</code> block in <code>index.html</code>. Contrast ratios are WCAG 2 (4.5 needed for body text, 3 for large text and UI). &ldquo;Distance&rdquo; is CIE &Delta;E76 &mdash; below roughly 20 the accent is easily confused with that colour.</p>
+
+<h2>Current palette</h2>
+<div class="row" id="palette"></div>
+
+<div id="options"></div>
+
+<script>
+// keep in sync with the @theme block in ../index.html
+var PALETTE = [
+  ['cream', '#F7F1E8'], ['cream-alt', '#EFE4D4'],
+  ['pink-tint', '#F0DEDA'], ['pink', '#D9A9A0'], ['pink-deep', '#96524A'],
+  ['sage-tint', '#E4E9DF'], ['sage', '#A9B79E'], ['sage-deep', '#4B5D40'],
+  ['plum-tint', '#EADFE6'], ['plum', '#7C5570'], ['plum-deep', '#55374B'],
+  ['ink-soft', '#5C4F60'], ['ink', '#3A2E3D']
+];
+
+var OPTIONS = [
+  { name: 'Ember amber', tint: '#F3E1BF', base: '#D19A3F', deep: '#8A5A14',
+    note: 'Ties to “Cinder”; roughly the complement of plum. Warm, vintage, gig-poster feel. Top pick for a call-to-action colour.' },
+  { name: 'Dusty teal', tint: '#DCE9E7', base: '#6A9A9A', deep: '#2F5C5E',
+    note: 'Complement of the pink/terracotta; a cool relief in a warm palette. Good for links and secondary buttons.' },
+  { name: 'Smoky slate blue', tint: '#E0E5EE', base: '#7488A8', deep: '#3B4A6B',
+    note: 'Sits next to plum, so quiet and moody. Good for night/gig sections.' },
+  { name: 'Burnt orange', tint: '#F4DCCB', base: '#C9673A', deep: '#8A3A17',
+    note: 'Boldest option and the strongest contrast, but may compete with the dusty pink.' }
+];
+
+function rgb(hex) {
+  return [1, 3, 5].map(function (i) { return parseInt(hex.slice(i, i + 2), 16); });
+}
+
+function luminance(hex) {
+  var c = rgb(hex).map(function (v) {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+}
+
+function contrast(a, b) {
+  var la = luminance(a), lb = luminance(b);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+
+function lab(hex) {
+  var c = rgb(hex).map(function (v) {
+    v /= 255;
+    return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  var xyz = [
+    (0.4124 * c[0] + 0.3576 * c[1] + 0.1805 * c[2]) / 0.95047,
+    (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]),
+    (0.0193 * c[0] + 0.1192 * c[1] + 0.9505 * c[2]) / 1.08883
+  ].map(function (t) { return t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116; });
+  return [116 * xyz[1] - 16, 500 * (xyz[0] - xyz[1]), 200 * (xyz[1] - xyz[2])];
+}
+
+function distance(a, b) {
+  var la = lab(a), lb = lab(b);
+  return Math.hypot(la[0] - lb[0], la[1] - lb[1], la[2] - lb[2]);
+}
+
+function textOn(hex) {
+  return contrast(hex, '#3A2E3D') >= contrast(hex, '#FFFFFF') ? '#3A2E3D' : '#FFFFFF';
+}
+
+function swatch(name, hex) {
+  return '<div class="swatch" style="background:' + hex + ';color:' + textOn(hex) + '"><b>' + name + '</b>' + hex + '</div>';
+}
+
+function ratioHtml(r) {
+  var cls = r >= 4.5 ? 'pass' : (r >= 3 ? '' : 'fail');
+  return '<span class="ratio ' + cls + '">' + r.toFixed(1) + ':1</span>';
+}
+
+function pairs(hex) {
+  return PALETTE.map(function (p) {
+    var r = contrast(hex, p[1]);
+    return '<div class="pair">' +
+      '<span style="background:' + hex + ';color:' + textOn(hex) + '">Aa</span>' +
+      '<span class="bg" style="background:' + p[1] + ';color:' + textOn(p[1]) + '"><b>' + p[0] + '</b>' +
+      ratioHtml(r) + '<small>ΔE ' + Math.round(distance(hex, p[1])) + '</small></span></div>';
+  }).join('');
+}
+
+function nearest(hex) {
+  var best = PALETTE.reduce(function (m, p) {
+    var d = distance(hex, p[1]);
+    return d < m.d ? { name: p[0], hex: p[1], d: d } : m;
+  }, { d: Infinity });
+  return '<i style="background:' + hex + '"></i> is closest to <i style="background:' + best.hex + '"></i> <b>' + best.name + '</b> (ΔE ' + Math.round(best.d) + ')';
+}
+
+document.getElementById('palette').innerHTML = PALETTE.map(function (p) { return swatch(p[0], p[1]); }).join('');
+
+document.getElementById('options').innerHTML = OPTIONS.map(function (o) {
+  return '<section><h2>' + o.name + '</h2><p>' + o.note + '</p>' +
+    '<div class="row">' + swatch('tint', o.tint) + swatch('base', o.base) + swatch('deep', o.deep) + '</div>' +
+    '<p class="nearest">Nearest existing colour: ' + nearest(o.base) + '. Deep ' + nearest(o.deep).replace(/^.*? is closest/, 'is closest') + '.</p>' +
+    '<h3>Base ' + o.base + ' as text/fill against the palette</h3><div class="pairs">' + pairs(o.base) + '</div>' +
+    '<h3>Deep ' + o.deep + ' as text/fill against the palette</h3><div class="pairs">' + pairs(o.deep) + '</div>' +
+    '<span class="btn" style="background:' + o.base + ';color:' + textOn(o.base) + '">Get tickets</span>' +
+    '<span class="btn" style="background:' + o.deep + ';color:' + textOn(o.deep) + '">Listen now</span>' +
+    '<span class="btn" style="background:' + o.tint + ';color:' + o.deep + '">Tour dates</span>' +
+    '</section>';
+}).join('');
+</script>
 </body>
 </html>
