@@ -6,7 +6,7 @@
 
 /* Self-hosted Google Fonts (latin subset), replacing the fonts.googleapis.com stylesheet */
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -24,7 +24,7 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -33,7 +33,7 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -42,7 +42,7 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -78,7 +78,7 @@
 }
 
 @font-face {
-  font-family: "Caveat";
+  font-family: Caveat;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -87,7 +87,7 @@
 }
 
 @font-face {
-  font-family: "Caveat";
+  font-family: Caveat;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
