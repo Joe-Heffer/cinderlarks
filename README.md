@@ -10,7 +10,7 @@ The Cinderlarks' website — a plain static HTML/CSS/JS page, deployed to GitHub
 - `index.html` — the entire site.
 - `favicon.svg` — site favicon.
 - `assets/images/`, `assets/fonts/` — the site's own images and the "Wild Honey" logo font.
-- `assets/vendor/` — vendored Tailwind CSS v4 browser build (`@tailwindcss/browser`, MIT license, see `assets/vendor/LICENSE`), self-hosted instead of pulled from `cdn.tailwindcss.com`.
+- `assets/src/tailwind.css` — Tailwind CSS v4 input (the `@theme` block and content sources); `assets/tailwind.css` is the compiled, minified output. Both are committed.
 
 ## Previewing locally
 
@@ -22,10 +22,12 @@ python3 -m http.server
 
 Then open http://localhost:8000 in a browser.
 
-## Updating vendored Tailwind
+## Rebuilding the Tailwind CSS
+
+Run this after changing Tailwind classes in `index.html`, `epk/index.html` or `assets/script.js`, or the theme in `assets/src/tailwind.css`, and commit the result. CI fails if `assets/tailwind.css` is out of date.
 
 ```sh
-npm pack @tailwindcss/browser@latest   # then copy dist/index.global.js over assets/vendor/tailwind.js
+scripts/build-css.sh
 ```
 
 ## Checks
