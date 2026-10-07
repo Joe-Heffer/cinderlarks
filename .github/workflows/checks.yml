@@ -102,7 +102,7 @@ jobs:
           set -euo pipefail
 
           # Content assets that should be referenced by filename from somewhere
-          # in the site source. 
+          # in the site source.
           mapfile -t assets < <(git ls-files -- 'assets/images' 'assets/videos' 'assets/fonts' 'favicon.svg')
           mapfile -t sources < <(git ls-files -- '*.html' '*.css' '*.js' '*.json' '*.md')
 
