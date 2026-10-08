@@ -95,7 +95,8 @@
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-html { scroll-behavior: smooth; }
+/* scroll-padding keeps in-page links from landing under the sticky nav; --nav-h is its measured height, set by script.js */
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h, 3.5rem); }
 
 body {
   background-image: url('images/paper-grain.jpg');
@@ -111,9 +112,6 @@ body {
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
-
-/* #video has no top padding, so keep the sticky nav from covering it when scrolled to */
-#video { scroll-margin-top: 3.5rem; }
 
 /* "next section" arrow links at the foot of each section */
 .scroll-cue {
