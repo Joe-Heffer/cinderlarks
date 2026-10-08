@@ -47,7 +47,7 @@ Two things to know when touching these files: the vectors follow the font's own 
 - `assets/script.js` — the page's scroll-behavior JS (nav fade-in, `.reveal` scroll-in animation via `IntersectionObserver`), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.
 - `assets/images/` — the site's content images (background textures, hero poster frame); `assets/images/logos/` holds the logo wordmark files. The `logo-wordmark.{svg,pdf,eps}` files (plus their `-white` and `-ink` colourways, offered for download from the EPK's Logos section) are generated from `assets/fonts/wild-honey.ttf` with the lettering converted to outlines, so they carry no font dependency — see "Regenerating the logo vectors" below.
-- `assets/fonts/` — the "Wild Honey" display font used for the logo wordmark.
+- `assets/fonts/` — the "Wild Honey" display font used for the logo wordmark, plus self-hosted latin-subset WOFF2 files for Fraunces, Public Sans and Caveat, declared in `assets/style.css`. Their licences live in `assets/vendor/fonts/`. No third-party font requests are made.
 - `assets/src/tailwind.css` — Tailwind v4 input: `@theme` block plus `@source` paths. `assets/tailwind.css` is the compiled output, committed; regenerate it with `scripts/build-css.sh` whenever classes or the theme change (the `tailwind-build` CI job fails if it is stale).
 - `.htmlhintrc`, `.stylelintrc.json`, `.editorconfig` — lint/format config used by CI, not part of a build step. Formatting is intentionally lint-only (no Prettier): the file's dense, hand-authored style with long single-line Tailwind class lists is deliberate, and Prettier's default reformatting is a poor fit for it.
 
