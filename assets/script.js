@@ -1,19 +1,13 @@
-// Fade the sticky nav in once the hero section scrolls out of view.
-var nav = document.getElementById('site-nav');
-var hero = document.getElementById('top');
+// Remove time-limited content (e.g. the hero's next-gig line) once its data-expires moment has passed.
+document.querySelectorAll('[data-expires]').forEach(function (el) {
+  if (Date.now() > Date.parse(el.dataset.expires)) { el.remove(); }
+});
 
-var navObserver = new IntersectionObserver(function (entries) {
-  entries.forEach(function (entry) {
-    var showNav = !entry.isIntersecting;
-    nav.classList.toggle('opacity-0', !showNav);
-    nav.classList.toggle('opacity-100', showNav);
-    nav.classList.toggle('-translate-y-2', !showNav);
-    nav.classList.toggle('translate-y-0', showNav);
-    nav.classList.toggle('pointer-events-none', !showNav);
-    nav.classList.toggle('pointer-events-auto', showNav);
-  });
-}, { threshold: 0.6 });
-navObserver.observe(hero);
+// Expose the sticky nav's height (it wraps to two rows on phones) as --nav-h, for scroll offsets and hero sizing.
+var nav = document.getElementById('site-nav');
+new ResizeObserver(function () {
+  document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+}).observe(nav);
 
 // Reveal .reveal elements with a scroll-in animation the first time they enter the viewport.
 var revealEls = document.querySelectorAll('.reveal');
