@@ -1,3 +1,8 @@
+// Remove time-limited content (e.g. the hero's next-gig line) once its data-expires moment has passed.
+document.querySelectorAll('[data-expires]').forEach(function (el) {
+  if (Date.now() > Date.parse(el.dataset.expires)) { el.remove(); }
+});
+
 // Expose the sticky nav's height (it wraps to two rows on phones) as --nav-h, for scroll offsets and hero sizing.
 var nav = document.getElementById('site-nav');
 new ResizeObserver(function () {
