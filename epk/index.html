@@ -16,24 +16,24 @@
 
 <body class="bg-cream text-ink font-sans antialiased">
 
-<!-- sticky nav — hidden at top, fades in once the hero has scrolled past -->
-<header id="site-nav"
-  class="fixed top-0 inset-x-0 z-50 opacity-0 -translate-y-2 pointer-events-none transition-all duration-700 ease-out bg-cream/90 backdrop-blur-sm border-b border-sage-tint">
-  <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-8 py-4" aria-label="Press kit">
-    <a href="#top" class="font-logo tracking-wide text-sm sm:text-base text-ink shrink-0">The Cinderlarks</a>
-    <div class="flex items-center gap-3 sm:gap-8 text-[0.65rem] sm:text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap overflow-x-auto">
-      <a href="#video" class="hover:text-sage-deep transition-colors">Watch</a>
-      <a href="#about" class="hover:text-sage-deep transition-colors">About</a>
-      <a href="#photos" class="hover:text-sage-deep transition-colors">Photos</a>
-      <a href="#reels" class="hover:text-sage-deep transition-colors">Reels</a>
-      <a href="#logos" class="hover:text-sage-deep transition-colors">Logos</a>
-      <a href="#tech-spec" class="hover:text-sage-deep transition-colors">Tech spec</a>
+<!-- sticky nav -->
+<!-- phones: name on the first row, section links on a second (scrolls sideways if they don't fit); md+: one row -->
+<header id="site-nav" class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage-tint">
+  <nav class="max-w-5xl mx-auto flex flex-wrap items-center justify-between md:gap-x-8 px-4 md:px-8 md:py-1" aria-label="Press kit">
+    <a href="#top" class="font-logo tracking-wide text-base text-ink shrink-0 py-2.5">The Cinderlarks</a>
+    <div class="w-full md:w-auto flex gap-6 md:gap-8 border-t border-sage-tint md:border-0 text-sm uppercase tracking-wide text-ink-soft whitespace-nowrap overflow-x-auto">
+      <a href="#video" class="py-2.5 hover:text-sage-deep transition-colors">Watch</a>
+      <a href="#about" class="py-2.5 hover:text-sage-deep transition-colors">About</a>
+      <a href="#photos" class="py-2.5 hover:text-sage-deep transition-colors">Photos</a>
+      <a href="#reels" class="py-2.5 hover:text-sage-deep transition-colors">Reels</a>
+      <a href="#logos" class="py-2.5 hover:text-sage-deep transition-colors">Logos</a>
+      <a href="#tech-spec" class="py-2.5 hover:text-sage-deep transition-colors">Tech spec</a>
     </div>
   </nav>
 </header>
 
 <!-- hero -->
-<section id="top" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
+<section id="top" class="relative min-h-[calc(100svh-var(--nav-h,0px))] flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
 
   <!-- TODO: swap for the combined 10-reel intro film once it's cut -->
   <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
