@@ -1,3 +1,8 @@
+// Remove time-limited content (e.g. the hero's next-gig line) once its data-expires moment has passed.
+document.querySelectorAll('[data-expires]').forEach(function (el) {
+  if (Date.now() > Date.parse(el.dataset.expires)) { el.remove(); }
+});
+
 // Fade the sticky nav in once the hero section scrolls out of view.
 var nav = document.getElementById('site-nav');
 var hero = document.getElementById('top');
