@@ -106,12 +106,14 @@ body {
   background-blend-mode: multiply;
 }
 
-.reveal {
+/* Hidden only when the inline script in <head> has flagged JavaScript as running,
+   so content stays visible if JavaScript is disabled or fails. */
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 /* "next section" arrow links at the foot of each section */
 .scroll-cue {
@@ -143,6 +145,7 @@ body {
   html { scroll-behavior: auto; }
   .scroll-cue, .scroll-cue-bob { animation: none; }
   .scroll-cue-bob { animation: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 .gig-photo { filter: saturate(0.88) sepia(6%) contrast(1.02); }
