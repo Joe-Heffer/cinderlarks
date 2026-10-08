@@ -17,6 +17,8 @@
 
 <body class="bg-cream text-ink font-sans antialiased">
 
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-cream focus:text-ink focus:px-4 focus:py-2 focus:rounded focus:shadow">Skip to content</a>
+
 <!-- sticky nav -->
 <!-- phones: name on the first row, section links on a second (scrolls sideways if they don't fit); md+: one row -->
 <header id="site-nav" class="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-sage-tint">
@@ -33,6 +35,7 @@
   </nav>
 </header>
 
+<main id="main">
 <!-- hero -->
 <section id="top" class="relative min-h-[calc(100svh-var(--nav-h,0px))] flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-cream">
 
@@ -496,6 +499,8 @@
     </p>
   </div>
 </section>
+
+</main>
 
 <!-- footer -->
 <footer class="border-t border-sage-tint bg-[#2B1B14] py-16 px-6 text-center">
