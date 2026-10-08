@@ -30,6 +30,7 @@ var lightbox = document.getElementById('lightbox');
 
 if (galleryThumbs.length && lightbox) {
   var lightboxImage = lightbox.querySelector('.lightbox-image');
+  var lightboxCaption = lightbox.querySelector('.lightbox-caption');
   var lightboxClose = lightbox.querySelector('[data-lightbox-close]');
   var lightboxPrev = lightbox.querySelector('[data-lightbox-prev]');
   var lightboxNext = lightbox.querySelector('[data-lightbox-next]');
@@ -41,15 +42,19 @@ if (galleryThumbs.length && lightbox) {
     var thumb = galleryThumbs[currentIndex];
     lightboxImage.src = thumb.dataset.full;
     lightboxImage.alt = thumb.dataset.caption || '';
+    lightboxCaption.textContent = thumb.dataset.caption || '';
   }
 
   function openLightbox(index) {
     lastFocused = document.activeElement;
     showPhoto(index);
     lightbox.hidden = false;
-    requestAnimationFrame(function () { lightbox.classList.add('is-open'); });
     document.body.style.overflow = 'hidden';
-    lightboxClose.focus();
+    // Focus only once is-open has made the overlay display: flex; a display: none button can't take focus.
+    requestAnimationFrame(function () {
+      lightbox.classList.add('is-open');
+      lightboxClose.focus();
+    });
   }
 
   function closeLightbox() {
@@ -74,6 +79,22 @@ if (galleryThumbs.length && lightbox) {
   document.addEventListener('keydown', function (event) {
     if (lightbox.hidden) { return; }
     if (event.key === 'Escape') { closeLightbox(); }
+    if (event.key === 'Tab') {
+      // Keep Tab/Shift+Tab cycling through the lightbox's own buttons.
+      var buttons = [lightboxClose, lightboxPrev, lightboxNext];
+      var first = buttons[0];
+      var last = buttons[buttons.length - 1];
+      if (!lightbox.contains(document.activeElement)) {
+        event.preventDefault();
+        first.focus();
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
     if (event.key === 'ArrowLeft') { showPhoto(currentIndex - 1); }
     if (event.key === 'ArrowRight') { showPhoto(currentIndex + 1); }
   });
