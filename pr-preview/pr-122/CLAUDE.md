@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Cinderlarks — the band's website: a single static HTML/CSS/JS page, deployed to GitHub Pages. No build step, no package manager, no framework, no tests.
+Cinderlarks — the band's website: a single static HTML/CSS/JS page, deployed to GitHub Pages. No framework and no tests. The only build step is compiling Tailwind by hand with `scripts/build-css.sh` and committing the output.
 
 ## Commands
 
@@ -14,7 +14,7 @@ Preview locally:
 python3 -m http.server
 ```
 
-Then open http://localhost:8000. There's no build or test command in this repo, but CI does lint `index.html`, `epk/index.html` and `assets/style.css` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
+Then open http://localhost:8000. There's no test command, and the only build is the Tailwind one (`scripts/build-css.sh`). CI does lint `index.html`, `epk/index.html` and `assets/style.css` (see below) — no local install/build required for that either, `npx` pulls the tools on demand.
 
 Lint locally (same checks CI runs in `.github/workflows/checks.yml`):
 
@@ -41,14 +41,14 @@ Two things to know when touching these files: the vectors follow the font's own 
 
 ## Architecture
 
-- `index.html` — the entire site markup, plus the inline `@theme` block that Tailwind's browser build compiles in-page (that part can't move to a stylesheet).
+- `index.html` — the entire site markup, using Tailwind utility classes.
 - `epk/index.html` — the electronic press kit, served at `/epk/`. Deliberately unlisted: `noindex` robots meta, no canonical/OG/JSON-LD, not linked from the other pages, and kept out of `sitemap.xml` and `robots.txt` (a `Disallow` would advertise the URL and stop crawlers seeing the `noindex`). Reuses `assets/style.css` and `assets/script.js` via `../` paths, so it keeps the `#site-nav`/`#top`/`#copyright-year`/`#lightbox` ids that the script expects. Placeholders for assets not yet delivered are marked with `TODO` comments.
 - `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal` scroll-reveal animation, gallery lightbox, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
 - `assets/script.js` — the page's scroll-behavior JS (nav fade-in, `.reveal` scroll-in animation via `IntersectionObserver`), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.
 - `assets/images/` — the site's content images (background textures, hero poster frame); `assets/images/logos/` holds the logo wordmark files. The `logo-wordmark.{svg,pdf,eps}` files (plus their `-white` and `-ink` colourways, offered for download from the EPK's Logos section) are generated from `assets/fonts/wild-honey.ttf` with the lettering converted to outlines, so they carry no font dependency — see "Regenerating the logo vectors" below.
 - `assets/fonts/` — the "Wild Honey" display font used for the logo wordmark, plus self-hosted latin-subset WOFF2 files for Fraunces, Public Sans and Caveat, declared in `assets/style.css`. Their licences live in `assets/vendor/fonts/`. No third-party font requests are made.
-- `assets/vendor/` — vendored third-party code (Tailwind CSS v4 browser build + its LICENSE), self-hosted instead of pulled from a CDN.
+- `assets/src/tailwind.css` — Tailwind v4 input: `@theme` block plus `@source` paths. `assets/tailwind.css` is the compiled output, committed; regenerate it with `scripts/build-css.sh` whenever classes or the theme change (the `tailwind-build` CI job fails if it is stale).
 - `.htmlhintrc`, `.stylelintrc.json`, `.editorconfig` — lint/format config used by CI, not part of a build step. Formatting is intentionally lint-only (no Prettier): the file's dense, hand-authored style with long single-line Tailwind class lists is deliberate, and Prettier's default reformatting is a poor fit for it.
 
 Deployment: pushes to `main` deploy automatically via `.github/workflows/deploy.yml`, which pushes the whole repo to the `gh-pages` branch (`peaceiris/actions-gh-pages`, `keep_files: true` so it doesn't clobber PR preview directories living alongside it). `.github/workflows/pr-preview.yml` (`rossjrw/pr-preview-action`) deploys/tears down a preview of each PR to `gh-pages` under `pr-preview/pr-<number>/`, linked from the PR itself.
