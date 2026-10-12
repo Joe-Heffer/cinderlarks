@@ -19,9 +19,9 @@ Then open http://localhost:8000. There's no test command, and the only build is 
 Lint locally (same checks CI runs in `.github/workflows/checks.yml`):
 
 ```sh
-npx --yes htmlhint@1 --config .htmlhintrc index.html epk/index.html
+npx --yes htmlhint@1 --config .htmlhintrc index.html epk/index.html 404.html
 npm install --no-save stylelint@17 stylelint-config-standard@40 postcss-html@1
-npx stylelint --config .stylelintrc.json index.html epk/index.html
+npx stylelint --config .stylelintrc.json index.html epk/index.html 404.html
 npx stylelint --config .stylelintrc.json --customSyntax postcss assets/style.css
 npx --yes editorconfig-checker
 ```
@@ -43,6 +43,7 @@ Two things to know when touching these files: the vectors follow the font's own 
 
 - `index.html` — the entire site markup, using Tailwind utility classes.
 - `epk/index.html` — the electronic press kit, served at `/epk/`. Deliberately unlisted: `noindex` robots meta, no canonical/OG/JSON-LD, not linked from the other pages, and kept out of `sitemap.xml` and `robots.txt` (a `Disallow` would advertise the URL and stop crawlers seeing the `noindex`). Reuses `assets/style.css` and `assets/script.js` via `../` paths, so it keeps the `#site-nav`/`#copyright-year`/`#lightbox` ids that the script expects. Placeholders for assets not yet delivered are marked with `TODO` comments.
+- `404.html` — the not-found page GitHub Pages serves for any missing path. Uses root-relative (`/assets/...`) URLs because it is served from arbitrary depths, and is `noindex`. Reuses `assets/style.css` and `assets/script.js`, so it keeps the `#site-nav`/`#copyright-year` ids the script expects.
 - `assets/style.css` — plain hand-authored CSS (font-face, body texture, `.reveal` scroll-reveal animation, gallery lightbox, reduced-motion overrides) that doesn't need Tailwind's JIT processing.
 - `assets/script.js` — the page's JS (publishes the sticky nav's height as `--nav-h` for scroll offsets and hero sizing, `.reveal` scroll-in animation via `IntersectionObserver`, gallery lightbox), loaded from `index.html` with a plain `<script src>`.
 - `favicon.svg` — site favicon.
