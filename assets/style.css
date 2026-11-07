@@ -273,3 +273,82 @@ body {
   .bts-tile img, .bts-tile::after { transition: none; }
   .bts-tile:hover img, .bts-tile:focus-visible img { transform: none; }
 }
+
+/* ---- #listen: debut single, a record slipping out of its sleeve ---- */
+
+/* paper grain over the dark band, multiplied so it reads as printed ink rather than a flat fill */
+.single-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/paper-grain.jpg') repeat 0 0 / 900px auto;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.single-record {
+  --vinyl-out: 46%;
+
+  position: relative;
+  aspect-ratio: 1;
+}
+
+/* phones: nudge left so sleeve + protruding disc sit centred together */
+@media (width < 768px) {
+  .single-record { translate: calc(var(--vinyl-out) / -2) 0; }
+}
+
+.single-sleeve {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 24px 48px -12px rgb(0 0 0 / 55%);
+  transition: transform 0.5s ease;
+}
+
+.single-sleeve:hover { transform: translateY(-3px); }
+.single-sleeve:focus-visible { outline: 2px solid #d9a9a0; outline-offset: 4px; }
+
+.vinyl {
+  position: absolute;
+  inset: 2%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 20deg, transparent 0 8%, rgb(255 255 255 / 9%) 13%, transparent 20% 52%, rgb(255 255 255 / 6%) 60%, transparent 68%),
+    radial-gradient(circle, transparent 0 31%, rgb(0 0 0 / 35%) 31.5% 33%, transparent 33.5% 96%, rgb(255 255 255 / 8%) 97%, transparent 98%),
+    repeating-radial-gradient(circle, #1b151d 0 1px, #241d27 1px 2.5px);
+  box-shadow: 0 18px 40px -10px rgb(0 0 0 / 60%);
+  transform: translateX(var(--vinyl-out));
+  transition: transform 1.8s cubic-bezier(0.2, 0.7, 0.15, 1) 0.6s;
+}
+
+.js .single-record:not(.is-visible) .vinyl { transform: translateX(0); }
+
+/* the label carries the only asymmetric marks, so it's what visibly turns */
+.vinyl-label {
+  position: absolute;
+  inset: 34%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #1b151d 0 5%, transparent 5.5%),
+    radial-gradient(circle, transparent 0 62%, rgb(58 46 61 / 45%) 63% 65%, transparent 66%),
+    conic-gradient(from 0deg, transparent 0 70%, rgb(58 46 61 / 22%) 70% 78%, transparent 78%),
+    #d9a9a0;
+  animation: vinyl-spin 14s linear infinite;
+}
+
+/* hold the spin until the record has scrolled into view */
+.js .vinyl-label { animation-play-state: paused; }
+.js .single-record.is-visible .vinyl-label { animation-play-state: running; }
+
+@keyframes vinyl-spin {
+  to { transform: rotate(1turn); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .single-sleeve { transition: none; }
+  .single-sleeve:hover { transform: none; }
+  .vinyl { transition: none; }
+  .js .single-record:not(.is-visible) .vinyl { transform: translateX(var(--vinyl-out)); }
+  .vinyl-label { animation: none; }
+}
