@@ -143,7 +143,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .scroll-cue, .scroll-cue-bob { animation: none; }
-  .scroll-cue-bob { animation: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
@@ -203,18 +202,38 @@ body {
   .bts-row { flex-direction: row; }
 }
 
+/* full-viewport native <dialog>: reset the UA box so the dark surround is the dialog itself */
 .lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
   background: rgb(0 0 0 / 90%);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
-.lightbox.is-open { display: flex; opacity: 1; }
+
+.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@starting-style {
+  .lightbox[open] { opacity: 0; }
+}
+
+/* stop scroll gestures over the lightbox chaining to the page behind it */
+.lightbox:modal { overscroll-behavior: contain; }
+
+.lightbox::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: transparent;
+}
 
 .lightbox-figure {
   display: flex;
