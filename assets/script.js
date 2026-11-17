@@ -35,7 +35,6 @@ if (galleryThumbs.length && lightbox) {
   var lightboxPrev = lightbox.querySelector('[data-lightbox-prev]');
   var lightboxNext = lightbox.querySelector('[data-lightbox-next]');
   var currentIndex = -1;
-  var lastFocused = null;
 
   function showPhoto(index) {
     currentIndex = (index + galleryThumbs.length) % galleryThumbs.length;
@@ -45,56 +44,24 @@ if (galleryThumbs.length && lightbox) {
     lightboxCaption.textContent = thumb.dataset.caption || '';
   }
 
-  function openLightbox(index) {
-    lastFocused = document.activeElement;
-    showPhoto(index);
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
-    // Focus only once is-open has made the overlay display: flex; a display: none button can't take focus.
-    requestAnimationFrame(function () {
-      lightbox.classList.add('is-open');
-      lightboxClose.focus();
-    });
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('is-open');
-    lightbox.hidden = true;
-    document.body.style.overflow = '';
-    if (lastFocused) { lastFocused.focus(); }
-  }
-
+  // A native modal <dialog> handles focus containment, Esc, inerting the page and returning focus to the thumbnail.
   galleryThumbs.forEach(function (thumb, index) {
-    thumb.addEventListener('click', function () { openLightbox(index); });
+    thumb.addEventListener('click', function () {
+      showPhoto(index);
+      lightbox.showModal();
+    });
   });
 
-  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxClose.addEventListener('click', function () { lightbox.close(); });
   lightboxPrev.addEventListener('click', function () { showPhoto(currentIndex - 1); });
   lightboxNext.addEventListener('click', function () { showPhoto(currentIndex + 1); });
 
+  // The dialog fills the viewport, so a click on its dark surround (not the photo or buttons) targets the dialog itself.
   lightbox.addEventListener('click', function (event) {
-    if (event.target === lightbox) { closeLightbox(); }
+    if (event.target === lightbox) { lightbox.close(); }
   });
 
-  document.addEventListener('keydown', function (event) {
-    if (lightbox.hidden) { return; }
-    if (event.key === 'Escape') { closeLightbox(); }
-    if (event.key === 'Tab') {
-      // Keep Tab/Shift+Tab cycling through the lightbox's own buttons.
-      var buttons = [lightboxClose, lightboxPrev, lightboxNext];
-      var first = buttons[0];
-      var last = buttons[buttons.length - 1];
-      if (!lightbox.contains(document.activeElement)) {
-        event.preventDefault();
-        first.focus();
-      } else if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    }
+  lightbox.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowLeft') { showPhoto(currentIndex - 1); }
     if (event.key === 'ArrowRight') { showPhoto(currentIndex + 1); }
   });

@@ -48,7 +48,7 @@
   <div class="relative z-10 max-w-2xl">
     <p class="reveal font-hand text-xl sm:text-2xl text-sage-deep mb-2">press kit</p>
     <h1 class="reveal mb-8" style="transition-delay:.05s">
-      <img src="../assets/images/logos/logo-wordmark.png" alt="The Cinderlarks" class="mx-auto w-[280px] sm:w-[480px] md:w-[600px] h-auto">
+      <img src="../assets/images/logos/logo-wordmark.png" alt="The Cinderlarks" width="1600" height="169" class="mx-auto w-[280px] sm:w-[480px] md:w-[600px] h-auto">
     </h1>
     <p class="reveal text-ink-soft leading-relaxed sm:text-lg" style="transition-delay:.1s">
       The Cinderlarks&rsquo; music is all original, atmospheric, lyrical with intricate guitar work, bursts of art-rock, soaring choruses and heartfelt emotions.
@@ -71,8 +71,7 @@
   <div class="reveal aspect-video w-full">
     <iframe
       src="https://player.vimeo.com/video/1228561358?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
-      class="w-full h-full"
-      frameborder="0"
+      class="w-full h-full border-0"
       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       title="The Cinderlarks live"
@@ -367,8 +366,8 @@
 </section>
 
 <!-- gallery lightbox -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
-  <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close photo viewer">
+<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+  <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close photo viewer" autofocus>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <line x1="18" y1="6" x2="6" y2="18"/>
       <line x1="6" y1="6" x2="18" y2="18"/>
@@ -385,10 +384,10 @@
     </svg>
   </button>
   <figure class="lightbox-figure">
-    <img class="lightbox-image" src="../assets/images/album/01-large.webp" alt="">
+    <img class="lightbox-image" alt="">
     <figcaption class="lightbox-caption"></figcaption>
   </figure>
-</div>
+</dialog>
 
 <!-- reels -->
 <section id="reels" class="relative border-y border-sage-tint section-edge py-24 sm:py-32 overflow-hidden">
