@@ -343,7 +343,9 @@
   <h2 class="reveal font-display italic text-3xl sm:text-4xl text-ink mb-4">Live</h2>
   <p class="reveal text-ink-soft mb-10 max-w-md mx-auto" style="transition-delay:.1s">Come and see us play.</p>
 
-  <!-- no gig announced: when one is, restore the "next up" card (see git history / #104), plus the hero line and the MusicEvent JSON-LD -->
+  <!-- no gig announced. When one is, restore the "next up" card from git history (commit before 4ea7678, #104), plus the hero line, the Listen "hear it live" line and the MusicEvent JSON-LD.
+       Give the gig card, the hero line and the "hear it live" line data-expires="<end of gig, ISO 8601>" so script.js removes them afterwards, and give this fallback article
+       hidden data-show-after="<same moment>" so it takes over. The JSON-LD can't expire client-side: .github/workflows/stale-gig.yml opens an issue when its startDate has passed. -->
   <article class="reveal max-w-md mx-auto mb-12 border border-sage-tint bg-cream-alt rounded-sm px-6 py-8" style="transition-delay:.2s">
     <p class="font-hand text-lg text-sage-deep mb-1">next up &mdash;</p>
     <h3 class="font-display text-2xl text-ink mb-2">No dates announced yet</h3>

@@ -1,0 +1,75 @@
+name: Stale gig check
+
+# Daily check that nothing on the site still advertises a gig that has passed (#104).
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  stale-gig:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Find past gig dates
+        id: scan
+        run: |
+          python3 - <<'PY' | tee report.txt
+          import re, sys
+          from datetime import datetime, timezone
+
+          html = open("index.html", encoding="utf-8").read()
+          now = datetime.now(timezone.utc)
+          found = []
+
+          def parse(value):
+              dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+              return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+          # JSON-LD dates (crawlers don't run script.js, so these need removing by hand).
+          for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
+              if '"MusicEvent"' not in block:
+                  continue
+              for key, value in re.findall(r'"(startDate|endDate)"\s*:\s*"([^"]+)"', block):
+                  if parse(value) < now:
+                      found.append(f"MusicEvent JSON-LD {key} {value}")
+
+          # data-expires elements that are past their date but still in the markup.
+          for value in re.findall(r'data-expires="([^"]+)"', html):
+              if parse(value) < now:
+                  found.append(f"data-expires {value}")
+
+          for line in found:
+              print(line)
+          open("/dev/stderr", "w").write(f"{len(found)} past date(s) found\n")
+          open(__import__("os").environ["GITHUB_OUTPUT"], "a").write(f"stale={'true' if found else 'false'}\n")
+          PY
+
+      - name: Open an issue if one isn't already open
+        if: steps.scan.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          title="Live section still lists a past gig"
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "Issue #$existing is already open."
+            exit 0
+          fi
+          {
+            echo "The daily stale-gig check found dates in \`index.html\` that have passed (see #104):"
+            echo
+            sed 's/^/* /' report.txt
+            echo
+            echo "Remove the \`MusicEvent\` JSON-LD block and any leftover gig markup, and leave the \"No dates announced yet\" card showing."
+            echo
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } > body.md
+          gh issue create --title "$title" --body-file body.md
