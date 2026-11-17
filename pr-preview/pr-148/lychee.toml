@@ -1,0 +1,17 @@
+# Config for the lychee link checker (https://lychee.cli.rs/usage/config/).
+# Used both by CI (.github/workflows/checks.yml) and local `lychee` runs.
+
+# README/CLAUDE.md point devs at the local preview server; skip it, it's
+# never reachable from CI.
+exclude_loopback = true
+
+exclude = [
+  # Vimeo restricts these embeds to approved referrer domains, so a bare
+  # request from CI (or a dev machine) gets a 401 even though the embeds
+  # work fine on the live site.
+  '^https://player\.vimeo\.com/video/',
+
+  # Instagram rate-limits/blocks automated requests (bots, CI) with 429s,
+  # even though the profile link works fine for real visitors.
+  '^https://www\.instagram\.com/',
+]
