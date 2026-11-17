@@ -3,6 +3,11 @@ document.querySelectorAll('[data-expires]').forEach(function (el) {
   if (Date.now() > Date.parse(el.dataset.expires)) { el.remove(); }
 });
 
+// Reveal fallback content (hidden in the markup) once its data-show-after moment has passed, e.g. "No dates announced yet" after the last gig.
+document.querySelectorAll('[data-show-after]').forEach(function (el) {
+  if (Date.now() > Date.parse(el.dataset.showAfter)) { el.hidden = false; }
+});
+
 // Expose the sticky nav's height (it wraps to two rows on phones) as --nav-h, for scroll offsets and hero sizing.
 var nav = document.getElementById('site-nav');
 new ResizeObserver(function () {
